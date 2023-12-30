@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Activity Manager</title>
+  <!-- 引入 jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<h1>活動管理器</h1>
+
+<!-- 查詢特定ID的活動表單 -->
+<form id="searchActivityForm">
+  <input type="number" id="activityId" placeholder="輸入活動ID" required />
+  <button type="submit">查詢活動</button>
+</form>
+
+<!-- 用於顯示活動詳情的區域 -->
+<div id="activityDetails"></div>
+
+<script>
+  // 當文檔加載完畢後執行
+  $(document).ready(function() {
+
+    // 綁定表單提交事件到函數
+    $('#searchActivityForm').on('submit', function(e) {
+      e.preventDefault(); // 阻止表單默認提交行為
+
+      // 獲取輸入的活動ID
+      var activityId = $('#activityId').val();
+
+      // 發起一個Ajax GET請求
+      $.ajax({
+        url: '/activities/' + activityId, // 拼接請求的URL
+        method: 'GET', // 使用GET方法
+        dataType: "JSON",  // 發送信息至服務器時內容編碼類型
+        data: $("#searchActivityForm").serialize(),
+        success: function(act) { // 請求成功時的回調函數
+
+          alert(act.actName);
+
+          var detailsHtml = '<div>活動名稱: ' + act.actName + '</div>';
+          detailsHtml += '<div>開始時間: ' + act.actStartTime + '</div>';
+          detailsHtml += '<div>結束時間: ' + act.actEndTime + '</div>';
+
+          $('#activityDetails').html(detailsHtml);
+        },
+
+        error: function(xhr, status, error) { // 請求失敗時的回調函數
+          // 在activityDetails區域顯示錯誤信息
+          $('#activityDetails').html('<div>錯誤: ' + error + '</div>');
+        }
+      });
+    });
+  });
+</script>
+
+</body>
+</html>
