@@ -6,101 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="1">
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/act/controller/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/act/model/ActVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/act/model/Test.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/dao/ActFollowedDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/dao/impl/ActFollowedDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/model/ActFollowed.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/service/ActFollowedService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/service/impl/ActFollowedServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/dao/ActRegDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/dao/impl/ActRegDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/model/ActReg.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/service/ActRegService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/service/impl/ActRegServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acttype/model/ActType.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acttypeitem/model/ActTypeItem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/announcement/dao/AnnouncementDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/announcement/dao/IAnnouncementDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/announcement/model/AnnouncementVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/announcement/service/TestAnnouncement.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/controller/CommentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/dao/CommentDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/dao/impl/CommentDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/model/Comment.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/service/CommentService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/service/impl/CommentServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/controller/CommentReportController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/dto/CommentReportRequest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/model/CommentReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/repository/CommentReportRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/repository/CommentRepository.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/service/CommentReportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/service/impl/CommentReportServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/faq/dao/IFaqDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/faq/model/FaqVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/memberreport/dao/IMemberReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/memberreport/model/MemberReportVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/controller/MembershipServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/dao/IMembershipDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/dao/MembershipDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/model/MembershipVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/service/MembershipService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/notify/dao/INotifyDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/notify/dao/NotifyDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/notify/model/NotifyVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/notify/service/TestNotify.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/postreport/dao/IPostReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/postreport/model/PostReportVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/controller/ActivityReportController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/dao/ActivityReportDao.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/dao/impl/ActivityReportDaoImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/model/ActivityReport.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/service/ActivityReportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/service/impl/ActivityReportServiceImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venclosed/dao/IVenClosedDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venclosed/dao/VenClosedDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venclosed/model/VenClosedVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venclosed/service/TestVenClosed.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venorder/dao/IVenOrderDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venorder/dao/VenOrderDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venorder/model/VenOrderVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venorder/service/TestVenOrder.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venuetype/model/VenueTypeDAO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venuetype/model/VenueTypeDAO_interface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venuetype/model/VenueTypeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/venuetype/model/VenueTypeVO.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Constants.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/Util.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datetimepicker/jquery.datetimepicker.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datetimepicker/jquery.datetimepicker.full.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/datetimepicker/jquery.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/cat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/inversecat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/main/main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/addMembership.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/images/back1.gif" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/images/notfind.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/images/tomcat.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/listAllMembership.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/listOneMembership.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/page1.file" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/page2.file" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/select_page.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/update_membership_input.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/venclosed/listAllVenClosed.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/venclosed/selectPage.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/venorder/page1.file" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/venorder/page2.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/ActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/ActService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/activities.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/activities.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +92,9 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "模組",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
@@ -237,7 +150,7 @@
       </method>
     </configuration>
     <configuration name="SpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="activity" />
+      <module name="activity333" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.lee.activity.SpringbootApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -267,7 +180,7 @@
       <workItem from="1703915674174" duration="3527000" />
       <workItem from="1703932156996" duration="15115000" />
       <workItem from="1703951394030" duration="18000" />
-      <workItem from="1703951908014" duration="323000" />
+      <workItem from="1703951908014" duration="4018000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
@@ -397,7 +310,23 @@
       <option name="project" value="LOCAL" />
       <updated>1703768062783</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="1">
+      <option name="closed" value="true" />
+      <created>1703952286167</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1703952286167</updated>
+    </task>
+    <task id="LOCAL-00018" summary="1">
+      <option name="closed" value="true" />
+      <created>1703952349586</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1703952349586</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

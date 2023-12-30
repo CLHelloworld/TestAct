@@ -5,6 +5,7 @@ import com.lee.activity.model.ActVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -24,6 +25,9 @@ public class ActService {
     // 創建活動
     public ActVO createAct(ActVO act) {
         // 方法接受一個ActVO對象，用於創建新的活動
+        // 設置創建時間為當前時間
+        act.setActCrTime(new Date());
+
         return actRepository.save(act);
         // 調用ActRepository的save方法將對象保存到數據庫，並返回保存的對象
     }

@@ -81,10 +81,5 @@ public class ActVO {
 
 	@Column(name = "lon", precision = 9, scale = 6)
 	private BigDecimal lon;
-	
-	
-	
-	
 
-	
 }
