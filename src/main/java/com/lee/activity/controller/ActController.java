@@ -12,7 +12,6 @@ import java.util.List;
 // 標註這是一個 REST 控制器，自動將方法的返回值序列化為 JSON
 @RequestMapping("/activities")
 // 設定這個控制器處理的基礎路徑，所有路徑都會加上 "/activities" 前綴
-
 public class ActController {
 
     private final ActService actService;
