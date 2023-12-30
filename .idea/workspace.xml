@@ -4,81 +4,443 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0758f926-738e-49cb-9dde-47c7435da779" name="Changes" comment="lombok VO" />
+    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="1">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/act/controller/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/act/model/ActVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/act/model/Test.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/dao/ActFollowedDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/dao/impl/ActFollowedDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/model/ActFollowed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/service/ActFollowedService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actfollowed/service/impl/ActFollowedServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/dao/ActRegDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/dao/impl/ActRegDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/model/ActReg.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/service/ActRegService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/actreg/service/impl/ActRegServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acttype/model/ActType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acttypeitem/model/ActTypeItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/announcement/dao/AnnouncementDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/announcement/dao/IAnnouncementDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/announcement/model/AnnouncementVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/announcement/service/TestAnnouncement.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/controller/CommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/dao/CommentDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/dao/impl/CommentDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/model/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/service/CommentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/comment/service/impl/CommentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/controller/CommentReportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/dto/CommentReportRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/model/CommentReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/repository/CommentReportRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/repository/CommentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/service/CommentReportService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/commentreport/service/impl/CommentReportServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/faq/dao/IFaqDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/faq/model/FaqVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/memberreport/dao/IMemberReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/memberreport/model/MemberReportVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/controller/MembershipServlet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/dao/IMembershipDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/dao/MembershipDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/model/MembershipVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/membership/service/MembershipService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/notify/dao/INotifyDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/notify/dao/NotifyDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/notify/model/NotifyVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/notify/service/TestNotify.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/postreport/dao/IPostReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/postreport/model/PostReportVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/controller/ActivityReportController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/dao/ActivityReportDao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/dao/impl/ActivityReportDaoImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/model/ActivityReport.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/service/ActivityReportService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/report/service/impl/ActivityReportServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venclosed/dao/IVenClosedDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venclosed/dao/VenClosedDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venclosed/model/VenClosedVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venclosed/service/TestVenClosed.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venorder/dao/IVenOrderDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venorder/dao/VenOrderDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venorder/model/VenOrderVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venorder/service/TestVenOrder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venuetype/model/VenueTypeDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venuetype/model/VenueTypeDAO_interface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venuetype/model/VenueTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/venuetype/model/VenueTypeVO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/HibernateUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Util.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/datetimepicker/jquery.datetimepicker.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/datetimepicker/jquery.datetimepicker.full.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/datetimepicker/jquery.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/cat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/img/inversecat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/main/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/addMembership.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/images/back1.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/images/notfind.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/images/tomcat.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/listAllMembership.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/listOneMembership.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/page1.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/page2.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/select_page.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/membership/update_membership_input.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/venclosed/listAllVenClosed.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/venclosed/selectPage.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/venorder/page1.file" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/venorder/page2.file" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="Interface" />
         <option value="Class" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 0
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;CLHelloworld&quot;
+  }
 }</component>
-  <component name="ProjectId" id="2aFYJ6ThVqM5yf5LQQEJVU0HhG5" />
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="03686e27-822a-47df-a535-f6b8e255633a" />
+        <option name="url" value="https://github.com/CLHelloworld/springboot-mall.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/org/springframework/boot/spring-boot-test-autoconfigure/3.1.7/spring-boot-test-autoconfigure-3.1.7-sources.jar!/org/springframework/boot/test/autoconfigure/web/servlet/MockMvcAutoConfiguration.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2a2POqLCmnfkiZHwtgRyrfqaa4j" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/bnb00/Desktop/專題/Activity111",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\bnb00\Desktop\Activity\src\main\java\com\act" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bnb00\Desktop\專題\Activity\src\main\java1" />
+      <recent name="C:\Users\bnb00\Desktop\springboot-mall\springboot-mall\src\test\java\com\lee\springbootmall\controller" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\bnb00\Desktop\專題\Activity\src\main\resources\static" />
+      <recent name="C:\Users\bnb00\Desktop\專題\Activity\src\main\resources\templates" />
+      <recent name="C:\Users\bnb00\Desktop\專題\Activity\src\main\resources\static\web" />
+      <recent name="C:\Users\bnb00\Desktop\springboot-mall\springboot-mall\src\test\resources" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.lee.springbootmall.controller" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.lee.springbootmall.model" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringbootApplication">
+    <configuration name="Mytest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.lee.springbootmall.constant.Mytest" />
+      <module name="activity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lee.activity.constant.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ProductControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="activity" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.lee.activity.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.lee.springbootmall.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.lee.activity.controller.ProductControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpringbootApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="activity" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.lee.activity.SpringbootApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ProductControllerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="0758f926-738e-49cb-9dde-47c7435da779" name="Changes" comment="" />
-      <created>1703915719347</created>
+      <changelist id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="" />
+      <created>1703513673950</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1703915719347</updated>
-      <workItem from="1703915720612" duration="4817000" />
-      <workItem from="1703924686748" duration="41000" />
-      <workItem from="1703924786205" duration="408000" />
+      <updated>1703513673950</updated>
+      <workItem from="1703513674967" duration="6477000" />
+      <workItem from="1703523019672" duration="4674000" />
+      <workItem from="1703613125009" duration="6641000" />
+      <workItem from="1703653181562" duration="1742000" />
+      <workItem from="1703655234213" duration="9838000" />
+      <workItem from="1703739612307" duration="18786000" />
+      <workItem from="1703769662858" duration="4260000" />
+      <workItem from="1703915674174" duration="3527000" />
+      <workItem from="1703932156996" duration="15115000" />
+      <workItem from="1703951394030" duration="18000" />
+      <workItem from="1703951908014" duration="323000" />
     </task>
-    <task id="LOCAL-00001" summary="lombok VO">
+    <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
-      <created>1703923672290</created>
+      <created>1703514477211</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1703923672290</updated>
+      <updated>1703514477211</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="商品功能 - 實作查詢商品">
+      <option name="closed" value="true" />
+      <created>1703517859316</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703517859316</updated>
+    </task>
+    <task id="LOCAL-00003" summary="商品功能 - 實作查詢商品">
+      <option name="closed" value="true" />
+      <created>1703519557926</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703519557926</updated>
+    </task>
+    <task id="LOCAL-00004" summary="商品功能 - category 使用Enum類型">
+      <option name="closed" value="true" />
+      <created>1703525695666</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703525695666</updated>
+    </task>
+    <task id="LOCAL-00005" summary="商品功能 - 設定返回時間格式和時區,Date類型無時間還需要調整">
+      <option name="closed" value="true" />
+      <created>1703527626299</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703527626299</updated>
+    </task>
+    <task id="LOCAL-00006" summary="商品功能 - 實作新增商品,category編碼問題待處理">
+      <option name="closed" value="true" />
+      <created>1703619744275</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1703619744275</updated>
+    </task>
+    <task id="LOCAL-00007" summary="商品功能 - 實作修改商品,category編碼問題(OK)">
+      <option name="closed" value="true" />
+      <created>1703664280676</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1703664280676</updated>
+    </task>
+    <task id="LOCAL-00008" summary="商品功能 - 實作刪除商品">
+      <option name="closed" value="true" />
+      <created>1703666020135</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1703666020135</updated>
+    </task>
+    <task id="LOCAL-00009" summary="商品功能 - 實作查詢商品列表">
+      <option name="closed" value="true" />
+      <created>1703667108419</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703667108419</updated>
+    </task>
+    <task id="LOCAL-00010" summary="商品功能 - 實作查詢商品列表(查詢條件包含使用者輸入)">
+      <option name="closed" value="true" />
+      <created>1703743240368</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1703743240368</updated>
+    </task>
+    <task id="LOCAL-00011" summary="商品功能 - 改善參數傳遞">
+      <option name="closed" value="true" />
+      <created>1703747069719</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1703747069719</updated>
+    </task>
+    <task id="LOCAL-00012" summary="商品功能 - 實作查詢商品列表(排序)">
+      <option name="closed" value="true" />
+      <created>1703754940197</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1703754940197</updated>
+    </task>
+    <task id="LOCAL-00013" summary="商品功能 - 實作查詢商品列表(分頁)">
+      <option name="closed" value="true" />
+      <created>1703758272261</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1703758272261</updated>
+    </task>
+    <task id="LOCAL-00014" summary="商品功能 - 實作查詢商品列表(分頁+總筆數)">
+      <option name="closed" value="true" />
+      <created>1703762675736</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1703762675736</updated>
+    </task>
+    <task id="LOCAL-00015" summary="商品功能 - 提煉程式">
+      <option name="closed" value="true" />
+      <created>1703764059805</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1703764059805</updated>
+    </task>
+    <task id="LOCAL-00016" summary="商品功能 - 單元測試">
+      <option name="closed" value="true" />
+      <created>1703768062783</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1703768062783</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="lombok VO" />
-    <option name="LAST_COMMIT_MESSAGE" value="lombok VO" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="TEXT_FILTER_SETTINGS">
+                <TextFilterSettings>
+                  <option name="REGEX" value="true" />
+                </TextFilterSettings>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="初始化" />
+    <MESSAGE value="商品功能 - 實作查詢商品" />
+    <MESSAGE value="商品功能 - category 使用Enum類型" />
+    <MESSAGE value="商品功能 - 設定返回時間格式和時區,Date類型無時間還需要調整" />
+    <MESSAGE value="商品功能 - 實作新增商品,category編碼問題待處理" />
+    <MESSAGE value="商品功能 - 實作修改商品,category編碼問題(OK)" />
+    <MESSAGE value="商品功能 - 實作刪除商品" />
+    <MESSAGE value="商品功能 - 實作查詢商品列表" />
+    <MESSAGE value="商品功能 - 實作查詢商品列表(查詢條件包含使用者輸入)" />
+    <MESSAGE value="商品功能 - 改善參數傳遞" />
+    <MESSAGE value="商品功能 - 實作查詢商品列表(排序)" />
+    <MESSAGE value="商品功能 - 實作查詢商品列表(分頁)" />
+    <MESSAGE value="商品功能 - 實作查詢商品列表(分頁+總筆數)" />
+    <MESSAGE value="商品功能 - 提煉程式" />
+    <MESSAGE value="商品功能 - 單元測試" />
+    <MESSAGE value="1" />
+    <option name="LAST_COMMIT_MESSAGE" value="1" />
   </component>
 </project>
