@@ -48,8 +48,10 @@ public class ActController {
     // 處理 POST 請求至 "/activities"，用於創建新的活動
     public ActVO createActivity(@RequestBody ActVO actVO) {
         // 使用 @RequestBody 獲取請求體中的 actVO 對象
+        System.out.println(actVO);
         return actService.createAct(actVO);
         // 調用 service 層的方法創建新活動並返回創建的活動
+
     }
 
     // 更新活動

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Data
@@ -23,18 +24,18 @@ public class ActVO {
 
 	@Column(name = "mem_id", nullable = false)
 	@JoinColumn(name = "mem_id")
-	private Integer memId;
+	private Integer memId = 1;
 
 	@Column(name = "act_name", nullable = false, length = 50)
 	private String actName;
 
-	@Temporal(TemporalType.TIMESTAMP)
+//	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "act_start_time", nullable = false)
-	private Date actStartTime;
+	private Timestamp actStartTime;
 
-	@Temporal(TemporalType.TIMESTAMP)
+//	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "act_end_time", nullable = false)
-	private Date actEndTime;
+	private Timestamp actEndTime;
 
 	@Column(name = "act_loc")
 	private String actLoc;
@@ -43,38 +44,38 @@ public class ActVO {
 	private String actDescr;
 
 	@Column(name = "act_upper")
-	private Integer actUpper;
+	private Integer actUpper=0;
 
 	@Column(name = "act_count")
-	private Byte actCount;
+	private Byte actCount=0;
 
 	@Column(name = "act_status")
-	private Byte actStatus;
+	private Byte actStatus=0;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "act_cr_time")
 	private Date actCrTime;
 
-	@Temporal(TemporalType.TIMESTAMP)
+//	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "reg_start_time")
-	private Date regStartTime;
+	private Timestamp regStartTime;
 
-	@Temporal(TemporalType.TIMESTAMP)
+//	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "reg_end_time")
-	private Date regEndTime;
+	private Timestamp regEndTime;
 
 	@Lob
 	@Column(name = "act_pic")
 	private byte[] actPic;
 
 	@Column(name = "act_tot_rating")
-	private Double actTotRating;
+	private Double actTotRating=0.0;
 
 	@Column(name = "act_rate_count")
-	private Double actRateCount;
+	private Double actRateCount=0.0;
 
 	@Column(name = "act_follow_count")
-	private Integer actFollowCount;
+	private Integer actFollowCount=0;
 
 	@Column(name = "lat", precision = 8, scale = 6)
 	private BigDecimal lat;

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>關於我們</title>
+    <!-- 引入 Bootstrap CSS 文件 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <style>
+        main {
+            min-height: calc(100vh - 70px);
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div class="container">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <div class="col-md-3 mb-2 mb-md-0">
+            <a href="index.html" class="d-inline-flex link-body-emphasis text-decoration-none">
+              <span class="fs-4">做伙</span>
+            </a>
+          </div>
+    
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="index.html" class="nav-link px-2 link-secondary">首頁</a></li>
+            <li><a href="join.html" class="nav-link px-2 link-secondary">瀏覽活動</a></li>
+            <li><a href="create.html" class="nav-link px-2 link-secondary">舉辦活動</a></li>
+            <li><a href="rent.html" class="nav-link px-2 link-secondary">場地租借</a></li>
+            <li><a href="customer.html" class="nav-link px-2 link-secondary">FAQs</a></li>
+            <li><a href="about.html" class="nav-link px-2 link-secondary">關於我們</a></li>
+          </ul>
+    
+          <div class="col-md-3 text-end">
+            <button type="button" class="btn btn-outline-primary me-2"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">登入</a></button>
+            <button type="button" class="btn btn-primary"><a class="nav-link" href="register.html">註冊</a></button>
+          </div>
+        </header>
+      </div>
+
+    <main class="container mt-5">
+        <section id="about-us" class="mt-5">
+            <h2>關於我們</h2>
+            <section id="about-us" class="mt-5">
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>我們的使命</h3>
+                        <p>做伙致力於建立一個連結人與活動的平台，讓每個人都能發現並參與豐富多彩的活動。</p>
+
+                        <h3>我們的價值觀</h3>
+                        <ul>
+                            <li>共享：我們鼓勵用戶共享各種活動和經歷，促進社區的互動。</li>
+                            <li>多元性：我們尊重和歡迎各種文化、興趣和人才。</li>
+                            <li>創新：我們不斷追求技術和服務的創新，以提供更好的使用體驗。</li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-6">
+                        <h3>我們的團隊</h3>
+                        <p>我們是一群充滿熱情、專業知識且充滿創造力的人才。我們共同努力，致力於打造最好的活動體驗。</p>
+
+                        <h3>歷史和成就</h3>
+                        <p>自成立以來，我們已經成功舉辦了數千個活動，並建立了一個活躍的社群。感謝每一位參與者的支持！</p>
+                    </div>
+                </div>
+
+                <h3>聯絡我們</h3>
+                <p>如果您有任何問題、建議或合作機會，請隨時與我們聯絡。我們很樂意聽取您的意見。</p>
+
+                <!-- 添加更多有關團隊或公司的信息 -->
+            </section>
+
+        </section>
+    </main>
+
+    <div class="container">
+        <footer class="py-3 my-4">
+          <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+            <li class="nav-item"><a href="index.html" class="nav-link px-2 text-muted">首頁</a></li>
+            <li class="nav-item"><a href="customer.html" class="nav-link px-2 text-muted">客服中心</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link px-2 text-muted">關於我們</a></li>
+          </ul>
+          <p class="text-center text-muted">© 2023 Company, Inc</p>
+        </footer>
+    </div>
+
+    <!-- 引入 Bootstrap JavaScript 文件 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+    <!-- 登入選項的Modal 彈窗 -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="loginModalLabel">會員登入</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- 在這裡加入登入表單的 HTML 代碼 -->
+                    <form>
+                        <!-- 登入表單的輸入欄位 -->
+                        <div class="mb-3">
+                            <label for="username" class="form-label">帳號：</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="輸入您的帳號"
+                                required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">密碼：</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="password" name="password"
+                                    placeholder="輸入您的密碼" required>
+                                <!-- 在密碼輸入框右上方新增"忘記密碼"的連結 -->
+                                <a href="#" class="input-group-text" id="forgotPasswordLink">忘記密碼</a>
+                            </div>
+                        </div>
+                        <!-- 登入按鈕 -->
+                        <button type="submit" class="btn btn-primary">登入</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
