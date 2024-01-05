@@ -4,22 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="前後連接ok">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/actdetails.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/activity.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/create.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/customer.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/join.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/member.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/rent.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" afterDir="false" />
-    </list>
+    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="新增功能(時間)-資料庫ok" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -194,7 +179,7 @@
       <workItem from="1703961328014" duration="23000" />
       <workItem from="1704003315785" duration="287000" />
       <workItem from="1704358494389" duration="3247000" />
-      <workItem from="1704434519195" duration="14452000" />
+      <workItem from="1704434519195" duration="14856000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
@@ -364,7 +349,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704003413182</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="新增功能(時間)-資料庫ok">
+      <option name="closed" value="true" />
+      <created>1704453864898</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1704453864898</updated>
+    </task>
+    <task id="LOCAL-00023" summary="新增功能(時間)-資料庫ok">
+      <option name="closed" value="true" />
+      <created>1704453891681</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1704453891681</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -409,6 +410,7 @@
     <MESSAGE value="商品功能 - 單元測試" />
     <MESSAGE value="1" />
     <MESSAGE value="前後連接ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="前後連接ok" />
+    <MESSAGE value="新增功能(時間)-資料庫ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增功能(時間)-資料庫ok" />
   </component>
 </project>
