@@ -157,38 +157,36 @@
               maxlength="50"
               required
             />
-
-            <label for="regStartTime">活動報名開始時間:</label>
+            <label for="actUpper">報名人數上限:</label>
             <input
-              type="datetime-local"
-              id="regStartTime"
-              name="regStartTime"
-              required
+                    type="number"
+                    id="actUpper"
+                    name="actUpper"
+                    maxlength="50"
+                    required
             />
 
-            <label for="regEndTime">活動報名結束時間:</label>
-            <input
-              type="datetime-local"
-              id="regEndTime"
-              name="regEndTime"
-              required
-            />
+            <div class="row">
+              <div class="col-md-6">
+                <label for="regStartTime">活動報名開始時間:</label>
+                <input type="datetime-local" id="regStartTime" name="regStartTime" required />
+              </div>
+              <div class="col-md-6">
+                <label for="regEndTime">活動報名結束時間:</label>
+                <input type="datetime-local" id="regEndTime" name="regEndTime" required />
+              </div>
+            </div>
 
-            <label for="actStartTime">活動開始時間:</label>
-            <input
-              type="datetime-local"
-              id="actStartTime"
-              name="actStartTime"
-              required
-            />
-
-            <label for="actEndTime">活動結束時間:</label>
-            <input
-              type="datetime-local"
-              id="actEndTime"
-              name="actEndTime"
-              required
-            />
+            <div class="row">
+              <div class="col-md-6">
+                <label for="actStartTime">活動開始時間:</label>
+                <input type="datetime-local" id="actStartTime" name="actStartTime" required />
+              </div>
+              <div class="col-md-6">
+                <label for="actEndTime">活動結束時間:</label>
+                <input type="datetime-local" id="actEndTime" name="actEndTime" required />
+              </div>
+            </div>
 
             <label for="actLoc">活動地點:</label>
             <input
@@ -240,48 +238,48 @@
   <script>
     $(document).ready(function() {
       $('#actCreatForm').submit(function(e) {
-        e.preventDefault(); // 防止表单的默认提交行为
+        e.preventDefault(); // 防止表單默認提交功能
 
         var formData = {
           actName: $('#actName').val(),
+          actUpper: $('#actUpper').val(),
           regStartTime:$('#regStartTime').val().split('T')[0]+' '+$('#regStartTime').val().split('T')[1] + ":00",
           regEndTime:$('#regEndTime').val().split('T')[0]+' '+$('#regEndTime').val().split('T')[1]+ ":00",
           actStartTime: $('#actStartTime').val().split('T')[0]+' '+$('#actStartTime').val().split('T')[1]+ ":00",
           actEndTime: $('#actEndTime').val().split('T')[0]+' '+$('#actEndTime').val().split('T')[1]+ ":00",
           actLoc: $('#actLoc').val(),
           actDescr: $('#actDescr').val(),
-          // 如果您的表单中还有其他字段，请在这里添加
+          // 表單中有新增的屬性這邊也要添加
         };
 
 
 
-        // 发送 AJAX 请求
+        // 發送 AJAX 請求
         $.ajax({
-          url: '/activities', // 表单的 action 属性值
+          url: '/activities', // 表單的 action 屬性值
           type: 'POST',
-          contentType: 'application/json', // 发送数据的格式
-          data: JSON.stringify(formData), // 将表单数据转换为 JSON 字符串
+          contentType: 'application/json', // 發送數據格式
+          data: JSON.stringify(formData), // 將表單數據轉為 JSON 字符串
 
           success: function(response) {
-            // 请求成功后的回调函数
-
+            // 請求成功後執行
             console.log(response);
-            alert('活动创建成功！');
-            // 可以在这里添加重定向或其他逻辑
+            alert('活動創建成功！');
+            // 可以在這邊添加導向或是其他邏輯
+            location.href = "index.html"
           },
           error: function(jqXHR, textStatus, errorThrown) {
-            // 请求失败后的回调函数
+            // 請求失敗後執行
             console.log(formData);
             console.error('AJAX error:', textStatus, errorThrown);
-            alert('创建活动失败，请检查输入信息。');
+            alert('創建活動失敗，請檢查輸入是否正確。');
           }
         });
       });
     });
-  </script>
+
 
   <!-- 引入 Bootstrap JavaScript 文件 -->
-  <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossorigin="anonymous"

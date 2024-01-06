@@ -22,9 +22,9 @@ public class ActVO {
 	@Column(name = "act_id")
 	private Integer actId;
 
-	@Column(name = "mem_id", nullable = false)
-	@JoinColumn(name = "mem_id")
-	private Integer memId = 1;
+	@ManyToOne
+	@JoinColumn(name = "mem_id" , referencedColumnName ="mem_id" )
+	private MemVO memVO ;
 
 	@Column(name = "act_name", nullable = false, length = 50)
 	private String actName;
@@ -44,7 +44,7 @@ public class ActVO {
 	private String actDescr;
 
 	@Column(name = "act_upper")
-	private Integer actUpper=0;
+	private Integer actUpper;
 
 	@Column(name = "act_count")
 	private Byte actCount=0;
@@ -52,7 +52,7 @@ public class ActVO {
 	@Column(name = "act_status")
 	private Byte actStatus=0;
 
-	@Temporal(TemporalType.TIMESTAMP)
+//	@Temporal(TemporalType.TIMESTAMP)
 	@Column(name = "act_cr_time")
 	private Date actCrTime;
 
