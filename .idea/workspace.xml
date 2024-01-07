@@ -4,50 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="新增功能(時間)-資料庫ok">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/config/ModelMapperConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/dto/ActVoRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/IActService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/web/updateAct.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="前端時間判斷ok">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActTypeItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActTypeVO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/dao/ActDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/dao/ActDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/ActService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/1.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/copy.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/copy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/dog.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/dog.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/dog_AI Anime.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/dog_AI Anime.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/dog_Background Removal.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/dog_Background Removal.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/group.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/group.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/icon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/join.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/join.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/join2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/join2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/join3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/join3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/team.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/team.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/商業(中)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/商業(中)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/商業(大)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/商業(大)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/商業(小) (2)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/商業(小) (2)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/商業(小)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/商業(小)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/客廳(中)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/客廳(中)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/客廳(大)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/客廳(大)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/客廳(小)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/客廳(小)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/教室(中) (2)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/教室(中) (2)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/教室(中)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/教室(中)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/教室(大)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/教室(大)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/教室(小)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/教室(小)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/聚會(中) (2)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/聚會(中) (2)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/聚會(中)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/聚會(中)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/images/聚會(小)_0.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/images/聚會(小)_0.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/create.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -227,7 +187,8 @@
       <workItem from="1704434519195" duration="14917000" />
       <workItem from="1704503532346" duration="6742000" />
       <workItem from="1704612685569" duration="13462000" />
-      <workItem from="1704626390260" duration="3027000" />
+      <workItem from="1704626390260" duration="4157000" />
+      <workItem from="1704630755719" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
@@ -421,7 +382,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704453934064</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="前端時間判斷ok">
+      <option name="closed" value="true" />
+      <created>1704629705547</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1704629705548</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,6 +436,7 @@
     <MESSAGE value="1" />
     <MESSAGE value="前後連接ok" />
     <MESSAGE value="新增功能(時間)-資料庫ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增功能(時間)-資料庫ok" />
+    <MESSAGE value="前端時間判斷ok" />
+    <option name="LAST_COMMIT_MESSAGE" value="前端時間判斷ok" />
   </component>
 </project>
