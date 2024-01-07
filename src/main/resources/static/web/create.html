@@ -1,287 +1,396 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>舉辦活動</title>
     <!-- 引入 Bootstrap CSS 文件 -->
     <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+            crossorigin="anonymous"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
-      main {
-        min-height: calc(100vh - 70px);
-      }
+        main {
+            min-height: calc(100vh - 70px);
+        }
 
-      form {
-        display: flex;
-        flex-direction: column;
-      }
-      form label {
-        margin-top: 10px;
-      }
-      form input[type="text"],
-      form input[type="datetime-local"],
-      form textarea {
-        width: 100%;
-        padding: 10px;
-        margin-top: 5px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-      }
-      form textarea {
-        height: 100px;
-        resize: vertical;
-      }
-      form input[type="submit"] {
-        background-color: #5cb85c;
-        color: white;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 20px;
-      }
-      form input[type="submit"]:hover {
-        background-color: #4cae4c;
-      }
-      /* main */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
 
-      body {
-        position: relative;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+        form label {
+            margin-top: 10px;
+        }
 
-      #container-main {
-        position: absolute;
-        /* height-max: 50% !important; */
-        width: 50%;
-        top: 20%;
-        border: 1px solid #000;
-        border-radius: 25px;
-        z-index: 10;
-        padding: 20px;
-      }
+        form input[type="text"],
+        form input[type="datetime-local"],
+        form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
 
-      #foot-div {
-        position: relative;
-        top: 1000px;
-        width: 80%;
-      }
+        form textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        form input[type="submit"] {
+            background-color: #5cb85c;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        form input[type="submit"]:hover {
+            background-color: #4cae4c;
+        }
+
+        /* main */
+
+        body {
+            position: relative;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #container-main {
+            position: absolute;
+            /* height-max: 50% !important; */
+            width: 50%;
+            top: 20%;
+            border: 1px solid #000;
+            border-radius: 25px;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        #foot-div {
+            position: relative;
+            top: 1000px;
+            width: 80%;
+        }
     </style>
-  </head>
+</head>
 
-  <body>
-    <div class="container">
-      <header
-        class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
-      >
+<body>
+<div class="container">
+    <header
+            class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom"
+    >
         <div class="col-md-3 mb-2 mb-md-0">
-          <a
-            href="index.html"
-            class="d-inline-flex link-body-emphasis text-decoration-none"
-          >
-            <span class="fs-4">做伙</span>
-          </a>
+            <a
+                    href="index.html"
+                    class="d-inline-flex link-body-emphasis text-decoration-none"
+            >
+                <span class="fs-4">做伙</span>
+            </a>
         </div>
 
         <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-          <li>
-            <a href="index.html" class="nav-link px-2 link-secondary">首頁</a>
-          </li>
-          <li>
-            <a href="join.html" class="nav-link px-2 link-secondary"
-              >瀏覽活動</a
-            >
-          </li>
-          <li>
-            <a href="create.html" class="nav-link px-2 link-secondary"
-              >舉辦活動</a
-            >
-          </li>
-          <li>
-            <a href="rent.html" class="nav-link px-2 link-secondary"
-              >場地租借</a
-            >
-          </li>
-          <li>
-            <a href="customer.html" class="nav-link px-2 link-secondary"
-              >FAQs</a
-            >
-          </li>
-          <li>
-            <a href="about.html" class="nav-link px-2 link-secondary"
-              >關於我們</a
-            >
-          </li>
+            <li>
+                <a href="index.html" class="nav-link px-2 link-secondary">首頁</a>
+            </li>
+            <li>
+                <a href="join.html" class="nav-link px-2 link-secondary"
+                >瀏覽活動</a
+                >
+            </li>
+            <li>
+                <a href="create.html" class="nav-link px-2 link-secondary"
+                >舉辦活動</a
+                >
+            </li>
+            <li>
+                <a href="rent.html" class="nav-link px-2 link-secondary"
+                >場地租借</a
+                >
+            </li>
+            <li>
+                <a href="customer.html" class="nav-link px-2 link-secondary"
+                >FAQs</a
+                >
+            </li>
+            <li>
+                <a href="about.html" class="nav-link px-2 link-secondary"
+                >關於我們</a
+                >
+            </li>
         </ul>
 
         <div class="col-md-3 text-end">
-          <button type="button" class="btn btn-outline-primary me-2">
-            <a
-              class="nav-link"
-              href="#"
-              data-bs-toggle="modal"
-              data-bs-target="#loginModal"
-              >登入</a
-            >
-          </button>
-          <button type="button" class="btn btn-primary">
-            <a class="nav-link" href="register.html">註冊</a>
-          </button>
+            <button type="button" class="btn btn-outline-primary me-2">
+                <a
+                        class="nav-link"
+                        href="#"
+                        data-bs-toggle="modal"
+                        data-bs-target="#loginModal"
+                >登入</a
+                >
+            </button>
+            <button type="button" class="btn btn-primary">
+                <a class="nav-link" href="register.html">註冊</a>
+            </button>
         </div>
-      </header>
-    </div>
+    </header>
+</div>
 
-    <main id="container-main" class="container mt-5">
-      <section id="join-event" class="mt-5">
+<main id="container-main" class="container mt-5">
+    <section id="join-event" class="mt-5">
         <h2>舉辦活動</h2>
         <p>歡迎舉辦精彩活動！填寫以下資訊完成舉辦。</p>
         <!-- 添加需要的表單元素或其他內容 -->
         <div>
-          <form id="actCreatForm" action="/activities" method="post">
-            <label for="actName">活動名稱:</label>
-            <input
-              type="text"
-              id="actName"
-              name="actName"
-              maxlength="50"
-              required
-            />
-            <label for="actUpper">報名人數上限:</label>
-            <input
-                    type="number"
-                    id="actUpper"
-                    name="actUpper"
-                    maxlength="50"
-                    required
-            />
+            <form id="actCreatForm" action="/activities" method="post">
+                <label for="actName">活動名稱:</label>
+                <input
+                        type="text"
+                        id="actName"
+                        name="actName"
+                        maxlength="50"
+                        required
+                />
+                <label for="actUpper">報名人數上限:</label>
+                <input
+                        type="number"
+                        id="actUpper"
+                        name="actUpper"
+                        maxlength="50"
+                        required
+                />
 
-            <div class="row">
-              <div class="col-md-6">
-                <label for="regStartTime">活動報名開始時間:</label>
-                <input type="datetime-local" id="regStartTime" name="regStartTime" required />
-              </div>
-              <div class="col-md-6">
-                <label for="regEndTime">活動報名結束時間:</label>
-                <input type="datetime-local" id="regEndTime" name="regEndTime" required />
-              </div>
-            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="regStartTime">活動報名開始時間:</label>
+                        <input type="datetime-local" id="regStartTime" name="regStartTime" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="regEndTime">活動報名結束時間:</label>
+                        <input type="datetime-local" id="regEndTime" name="regEndTime" required/>
+                    </div>
+                </div>
 
-            <div class="row">
-              <div class="col-md-6">
-                <label for="actStartTime">活動開始時間:</label>
-                <input type="datetime-local" id="actStartTime" name="actStartTime" required />
-              </div>
-              <div class="col-md-6">
-                <label for="actEndTime">活動結束時間:</label>
-                <input type="datetime-local" id="actEndTime" name="actEndTime" required />
-              </div>
-            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="actStartTime">活動開始時間:</label>
+                        <input type="datetime-local" id="actStartTime" name="actStartTime" required/>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="actEndTime">活動結束時間:</label>
+                        <input type="datetime-local" id="actEndTime" name="actEndTime" required/>
+                    </div>
+                </div>
+                <div>
+                    <label for="actPic">新增活動圖片:</label>
+                    <input
+                            type="file"
+                            id="actPic"
+                            accept="image/gif, image/jpeg, image/png">
+                    <img id="preview" src="" style="width: 465px; height: auto">
+                </div>
 
-            <label for="actLoc">活動地點:</label>
-            <input
-              type="text"
-              id="actLoc"
-              name="actLoc"
-              maxlength="50"
-              required
-            />
+                <label for="actLoc">活動地點:</label>
+                <input
+                        type="text"
+                        id="actLoc"
+                        name="actLoc"
+                        maxlength="50"
+                        required
+                />
 
-            <label for="actDescr">活動說明:</label>
-            <textarea
-              id="actDescr"
-              name="actDescr"
-              maxlength="2000"
-              required
-            ></textarea>
+                <label for="actDescr">活動說明:</label>
+                <textarea
+                        id="actDescr"
+                        name="actDescr"
+                        maxlength="2000"
+                        required
+                ></textarea>
 
-            <input type="submit" value="創建活動" />
-          </form>
+                <input type="submit" value="創建活動"/>
+            </form>
         </div>
-      </section>
-    </main>
+    </section>
+</main>
 
-    <div class="container" id="foot-div">
-      <footer class="py-3 my-4">
+<div class="container" id="foot-div">
+    <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item">
-            <a href="index.html" class="nav-link px-2 text-muted">首頁</a>
-          </li>
-          <li class="nav-item">
-            <a href="customer.html" class="nav-link px-2 text-muted"
-              >客服中心</a
-            >
-          </li>
-          <li class="nav-item">
-            <a href="about.html" class="nav-link px-2 text-muted">關於我們</a>
-          </li>
+            <li class="nav-item">
+                <a href="index.html" class="nav-link px-2 text-muted">首頁</a>
+            </li>
+            <li class="nav-item">
+                <a href="customer.html" class="nav-link px-2 text-muted"
+                >客服中心</a
+                >
+            </li>
+            <li class="nav-item">
+                <a href="about.html" class="nav-link px-2 text-muted">關於我們</a>
+            </li>
         </ul>
         <p class="text-center text-muted">© 2023 Company, Inc</p>
-      </footer>
-    </div>
+    </footer>
+</div>
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </body>
-  <script>
-    $(document).ready(function() {
-      $('#actCreatForm').submit(function(e) {
-        e.preventDefault(); // 防止表單默認提交功能
+</body>
 
-        var formData = {
-          actName: $('#actName').val(),
-          actUpper: $('#actUpper').val(),
-          regStartTime:$('#regStartTime').val().split('T')[0]+' '+$('#regStartTime').val().split('T')[1] + ":00",
-          regEndTime:$('#regEndTime').val().split('T')[0]+' '+$('#regEndTime').val().split('T')[1]+ ":00",
-          actStartTime: $('#actStartTime').val().split('T')[0]+' '+$('#actStartTime').val().split('T')[1]+ ":00",
-          actEndTime: $('#actEndTime').val().split('T')[0]+' '+$('#actEndTime').val().split('T')[1]+ ":00",
-          actLoc: $('#actLoc').val(),
-          actDescr: $('#actDescr').val(),
-          // 表單中有新增的屬性這邊也要添加
-        };
+<script>
 
 
-
-        // 發送 AJAX 請求
-        $.ajax({
-          url: '/activities', // 表單的 action 屬性值
-          type: 'POST',
-          contentType: 'application/json', // 發送數據格式
-          data: JSON.stringify(formData), // 將表單數據轉為 JSON 字符串
-
-          success: function(response) {
-            // 請求成功後執行
-            console.log(response);
-            alert('活動創建成功！');
-            // 可以在這邊添加導向或是其他邏輯
-            location.href = "index.html"
-          },
-          error: function(jqXHR, textStatus, errorThrown) {
-            // 請求失敗後執行
-            console.log(formData);
-            console.error('AJAX error:', textStatus, errorThrown);
-            alert('創建活動失敗，請檢查輸入是否正確。');
-          }
+        //預覽圖
+        $("#actPic").change(function () {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $("#preview").attr('src', e.target.result);
+                }
+                reader.readAsDataURL(this.files[0]);
+            }
         });
-      });
+
+        function formatDateTime(dateTimeString) {
+            const [date, time] = dateTimeString.split('T');
+            return date + ' ' + time + ':00'; // 假设后端需要秒
+        }
+
+        function validateDateTime(start, end) {
+            var startDate = new Date(start);
+            var endDate = new Date(end);
+            return startDate <= endDate;
+        }
+
+        $('#actCreatForm').submit(function (e) {
+            e.preventDefault(); // 防止表單默認提交功能
+
+            // 獲取並格式化日期時間
+            var regStart = formatDateTime($('#regStartTime').val());
+            var regEnd = formatDateTime($('#regEndTime').val());
+            var actStart = formatDateTime($('#actStartTime').val());
+            var actEnd = formatDateTime($('#actEndTime').val());
+
+            // 驗證報名時間
+            if (!validateDateTime(regStart, regEnd)) {
+                alert('報名開始時間不得晚於報名結束時間。');
+                return; // 阻止表單提交
+            }
+
+            // 驗證活動時間
+            if (!validateDateTime(actStart, actEnd)) {
+                alert('活動開始時間不得晚於活動結束時間。');
+                return; // 阻止表單提交
+            }
+
+            // 驗證活動開始時間不得早於報名結束時間
+            if (!validateDateTime(regEnd, actStart)) {
+                alert('活動開始時間不得早於報名結束時間。');
+                return; // 阻止表單提交
+            }
+
+            // 驗證活動結束時間不得早於報名開始時間
+            if (!validateDateTime(regStart, actEnd)) {
+                alert('活動結束時間不得早於報名開始時間。');
+                return; // 阻止表單提交
+            }
+
+            // 如果驗證通過，繼續表單提交邏輯
+            let formData = new FormData();
+            formData.append("actName", $('#actName').val());
+            formData.append("actUpper", $('#actUpper').val());
+            formData.append("regStartTime", formatDateTime($('#regStartTime').val()));
+            formData.append("regEndTime", formatDateTime($('#regEndTime').val()));
+            formData.append("actStartTime", formatDateTime($('#actStartTime').val()));
+            formData.append("actEndtime", formatDateTime($('#actEndTime').val()));
+            formData.append("actLoc", $('#actLoc').val());
+            formData.append("actDescr", $('#actDescr').val());
+            // 表單中有新增的屬性這邊也要添加
+
+            let fileInput = $("#actPic")[0];
+            let file = fileInput.files[0];
+            if (file) {
+                formData.append("actPic", file);
+            }
+
+                // 發送 AJAX 請求
+                $.ajax({
+                    url: '/activities', // 表單的 action 屬性值
+                    type: 'POST',
+                    data: formData,
+                    processData: false, // 不要處理發送的數據
+                    contentType: false, // 不要設置Content-Type
+
+                    success: function (response) {
+                        // 請求成功後執行
+                        console.log(response);
+                        alert('活動創建成功！');
+                        // 可以在這邊添加導向或是其他邏輯
+                        location.href = "index.html"
+                    },
+                    error: function (XHR, Status, error) {
+                        // 請求失敗後執行
+                        alert('創建活動失敗，請檢查輸入是否正確。');
+                    }
+                });
+
     });
 
+    // $(document).ready(function () {
+    //     $('#actCreatForm').submit(function (e) {
+    //         e.preventDefault(); // 防止表單默認提交功能
+    //
+    //         var formData = {
+    //             actName: $('#actName').val(),
+    //             actUpper: $('#actUpper').val(),
+    //             regStartTime: $('#regStartTime').val().split('T')[0] + ' ' + $('#regStartTime').val().split('T')[1] + ":00",
+    //             regEndTime: $('#regEndTime').val().split('T')[0] + ' ' + $('#regEndTime').val().split('T')[1] + ":00",
+    //             actStartTime: $('#actStartTime').val().split('T')[0] + ' ' + $('#actStartTime').val().split('T')[1] + ":00",
+    //             actEndTime: $('#actEndTime').val().split('T')[0] + ' ' + $('#actEndTime').val().split('T')[1] + ":00",
+    //             acrPic:$('#actPic') ,
+    //             actLoc: $('#actLoc').val(),
+    //             actDescr: $('#actDescr').val(),
+    //             // 表單中有新增的屬性這邊也要添加
+    //         };
+    //
+    //         // 發送 AJAX 請求
+    //         $.ajax({
+    //             url: '/activities', // 表單的 action 屬性值
+    //             type: 'POST',
+    //             contentType: 'application/json', // 發送數據格式
+    //             data: JSON.stringify(formData), // 將表單數據轉為 JSON 字符串
+    //
+    //             success: function (response) {
+    //                 // 請求成功後執行
+    //                 console.log(response);
+    //                 alert('活動創建成功！');
+    //                 // 可以在這邊添加導向或是其他邏輯
+    //                 location.href = "index.html"
+    //             },
+    //             error: function (jqXHR, textStatus, errorThrown) {
+    //                 // 請求失敗後執行
+    //                 console.log(formData);
+    //                 console.error('AJAX error:', textStatus, errorThrown);
+    //                 alert('創建活動失敗，請檢查輸入是否正確。');
+    //             }
+    //         });
+    //     });
+    // });
 
-  <!-- 引入 Bootstrap JavaScript 文件 -->
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-          integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-          crossorigin="anonymous"
-  ></script>
+
+    <!-- 引入 Bootstrap JavaScript 文件 -->
+
+    src = "https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity = "sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin = "anonymous"
+</script>
 </html>
