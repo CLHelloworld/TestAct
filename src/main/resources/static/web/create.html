@@ -13,6 +13,29 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
+        /* 导入Google字体 */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* 设置全局字体 */
+        body {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px; /* 标准字体大小 */
+            line-height: 1.6; /* 行高 */
+            color: #333; /* 字体颜色 */
+        }
+
+        /* 调整标题的样式 */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700; /* 字体加粗 */
+            margin-bottom: 0.5em; /* 下边距 */
+        }
+
+        /* 调整段落的样式 */
+        p {
+            margin-bottom: 1em; /* 下边距 */
+        }
+        /* 可以根据需要调整其他元素的样式 */
+
         main {
             min-height: calc(100vh - 70px);
         }
@@ -82,6 +105,42 @@
             position: relative;
             top: 1000px;
             width: 80%;
+        }
+        form input[type="text"],
+        form input[type="datetime-local"],
+        form textarea,
+        form select {
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 鼠标悬停在输入框上时的效果 */
+        form input[type="text"]:hover,
+        form input[type="datetime-local"]:hover,
+        form textarea:hover,
+        form select:hover {
+            border-color: #adb5bd;
+        }
+
+        /* 调整按钮样式 */
+        form input[type="submit"] {
+            background-color: #007bff; /* 主题蓝色 */
+            border-color: #007bff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 鼠标悬停在按钮上时的效果 */
+        form input[type="submit"]:hover {
+            background-color: #0069d9; /* 深一点的蓝色 */
+            border-color: #0062cc;
+        }
+
+        .card {
+            background-color: #f8f9fa; /* 浅灰色背景 */
+            border: 1px solid #e0e0e0; /* 淡灰色边框 */
+            border-radius: 0.5rem; /* 圆角 */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* 轻微的阴影 */
         }
     </style>
 </head>
@@ -350,7 +409,7 @@
 
     $(document).ready(function () {
         $.ajax({
-            url: "/api/actTypes",
+            url: "/act/actTypes",
             type: "GET",
             dataType: "json",
             success: function (types) {
@@ -465,7 +524,7 @@
 
         // 發送 AJAX 請求
         $.ajax({
-            url: '/api/createAct', // 表單的 action 屬性值
+            url: '/act/addAct', // 表單的 action 屬性值
             type: 'POST',
             data: formData,
             processData: false, // 不要處理發送的數據

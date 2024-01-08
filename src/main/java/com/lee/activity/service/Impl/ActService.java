@@ -1,8 +1,8 @@
 package com.lee.activity.service.Impl;
 
 import com.lee.activity.dao.ActDao;
-import com.lee.activity.model.ActVO;
 import com.lee.activity.dto.ActVoRequest;
+import com.lee.activity.model.ActVO;
 import com.lee.activity.service.IActService;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Date;
+import java.util.List;
+import java.util.Optional;
 
 @Component
 @Slf4j
@@ -36,6 +38,32 @@ public class ActService implements IActService {
 
     @Override
     public ActVO updateAct(Integer id, ActVoRequest actVoRequest) {
-        return null;
+        Optional<ActVO> existingAct = actDao.findById(id);
+        if (existingAct.isPresent()) {
+            ActVO actVO = existingAct.get();
+            modelMapper.map(actVoRequest, actVO);
+            actVO.setActCrTime(new Date());
+            return actDao.save(actVO);
+        } else {
+            // 处理找不到活动的情况，例如抛出异常
+//             throw new SomeNotFoundException("Activity not found with id " + id);
+            return null;
+        }
+    }
+
+    @Override
+    public List<ActVO> getAllActs() {
+        return actDao.findAll();
+    }
+
+    @Override
+    public ActVO getActById(Integer id) {
+        return actDao.findById(id).orElse(null); // 或者处理找不到活动的情况
+    }
+
+    //取得最新五筆活動資料
+    @Override
+    public List<ActVO> getLatestTenActivities() {
+        return actDao.findTop10ByOrderByActCrTimeDesc();
     }
 }
