@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 
 @RestController
 // 標註這是一個 REST 控制器，自動將方法的返回值序列化為 JSON
-@RequestMapping("/activities")
+@RequestMapping("/api")
 // 設定這個控制器處理的基礎路徑，所有路徑都會加上 "/activities" 前綴
 public class ActController {
 
@@ -47,7 +47,7 @@ public class ActController {
 
     // 創建新活動
 
-    @PostMapping
+    @PostMapping("/createAct")
     // 處理 POST 請求至 "/activities"，用於創建新的活動
     public ResponseEntity<ActVO> createActivity(
 
@@ -59,6 +59,7 @@ public class ActController {
             @RequestParam("actEndtime") Timestamp actEndtime,
             @RequestParam("actLoc") String actLoc,
             @RequestParam("actDescr") String actDescr,
+            @RequestParam("actType") Integer actType,
             @RequestParam(required = false) MultipartFile actPic
     ) {
         ActVoRequest actVoRequest = new ActVoRequest();
@@ -70,6 +71,8 @@ public class ActController {
         actVoRequest.setActEndTime(actEndtime);
         actVoRequest.setActLoc(actLoc);
         actVoRequest.setActDescr(actDescr);
+        actVoRequest.setActType(actType);
+
 
         // 處理文件數據
         if (actPic != null && !actPic.isEmpty()) {

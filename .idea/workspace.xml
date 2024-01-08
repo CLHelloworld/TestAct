@@ -4,10 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="前端時間判斷ok">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActTypeItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActTypeVO.java" afterDir="false" />
+    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="增加類別VO">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActTypeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/dao/ActTypeDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActTypeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/dto/ActVoRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/dto/ActVoRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActTypeItem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActTypeVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActTypeVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/join.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +33,8 @@
         <option value="JUnit5 Test Class" />
         <option value="HTML File" />
         <option value="JavaScript File" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -188,7 +197,9 @@
       <workItem from="1704503532346" duration="6742000" />
       <workItem from="1704612685569" duration="13462000" />
       <workItem from="1704626390260" duration="4157000" />
-      <workItem from="1704630755719" duration="988000" />
+      <workItem from="1704630755719" duration="1676000" />
+      <workItem from="1704638845484" duration="875000" />
+      <workItem from="1704692827207" duration="23831000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
@@ -390,7 +401,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704629705548</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="增加類別VO">
+      <option name="closed" value="true" />
+      <created>1704634413277</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1704634413277</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,6 +456,7 @@
     <MESSAGE value="前後連接ok" />
     <MESSAGE value="新增功能(時間)-資料庫ok" />
     <MESSAGE value="前端時間判斷ok" />
-    <option name="LAST_COMMIT_MESSAGE" value="前端時間判斷ok" />
+    <MESSAGE value="增加類別VO" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加類別VO" />
   </component>
 </project>

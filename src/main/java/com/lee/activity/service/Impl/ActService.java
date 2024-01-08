@@ -30,6 +30,7 @@ public class ActService implements IActService {
 
         modelMapper.map(actVoRequest,actVO);
         actVO.setActCrTime(new Date());
+        actVO.setActStatus((byte) 1);
         return actDao.save(actVO);
     }
 

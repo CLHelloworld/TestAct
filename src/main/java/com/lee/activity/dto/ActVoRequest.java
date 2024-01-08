@@ -29,6 +29,8 @@ public class ActVoRequest {
     private Integer actUpper;
 
     private byte[] actPic;
+
+    private Integer actType;
     public ActVoRequest() {
 
     }

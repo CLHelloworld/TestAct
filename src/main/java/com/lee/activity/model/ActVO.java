@@ -4,7 +4,6 @@ package com.lee.activity.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -21,6 +20,7 @@ public class ActVO {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "act_id")
     private Integer actId;
+
     //	@ManyToOne
 //	@JoinColumn(name = "mem_id" , referencedColumnName ="mem_id" )
 	@Column(name = "mem_id")
@@ -81,5 +81,12 @@ public class ActVO {
 
     @Column(name = "lon", precision = 9, scale = 6)
     private BigDecimal lon;
+
+    @Column(name = "act_type_id")
+    private Integer actType;
+
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "act_type_id", referencedColumnName = "act_type_id")
+//    private ActTypeVO actType;
 
 }
