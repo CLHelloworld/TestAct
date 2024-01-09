@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="瀏覽活動-自動生成活動完成">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="資料庫更改完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/join.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/updateAct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/updateAct.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,11 +106,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\T14 Gen 3\Desktop\TestAct\src\main\resources\static\SQL" />
       <recent name="C:\Users\bnb00\Desktop\專題\Activity111\src\main\resources\static\web" />
       <recent name="C:\Users\T14 Gen 3\Desktop\TestAct\src\main\resources\static" />
       <recent name="C:\Users\bnb00\Desktop\專題\Activity\src\main\resources\static" />
       <recent name="C:\Users\bnb00\Desktop\專題\Activity\src\main\resources\templates" />
-      <recent name="C:\Users\bnb00\Desktop\專題\Activity\src\main\resources\static\web" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.lee.springbootmall.controller" />
@@ -193,7 +191,7 @@
       <workItem from="1704638845484" duration="875000" />
       <workItem from="1704692827207" duration="33532000" />
       <workItem from="1704736705025" duration="1168000" />
-      <workItem from="1704783970191" duration="4370000" />
+      <workItem from="1704783970191" duration="7364000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
@@ -427,7 +425,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704737861984</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="資料庫更改完成">
+      <option name="closed" value="true" />
+      <created>1704790359715</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1704790359715</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -477,6 +483,7 @@
     <MESSAGE value="增加類別VO" />
     <MESSAGE value="新增活動類別ok" />
     <MESSAGE value="瀏覽活動-自動生成活動完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="瀏覽活動-自動生成活動完成" />
+    <MESSAGE value="資料庫更改完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="資料庫更改完成" />
   </component>
 </project>
