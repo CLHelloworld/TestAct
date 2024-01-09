@@ -13,13 +13,11 @@
             min-height: calc(100vh - 70px);
         }
         .card-img-top {
-            width: 100%; /* 设置图片宽度为容器宽度的100% */
-            height: 200px; /* 设置图片高度为固定值，比如200px */
-            object-fit: cover; /* 确保图片在调整大小时不变形 */
+            width: 100%; /* 設置圖片寬度為容器寬度的100% */
+            height: 200px; /* 設置圖片高度為固定值 */
+            object-fit: cover; /* 確保圖片在調整大小時不會變形 */
         }
-        .highlight {
-            background-color: yellow; /* 或您喜欢的任何颜色 */
-        }
+
     </style>
 </head>
 
@@ -103,50 +101,7 @@
     <!-- 間距用 -->
     <div class="my-4"></div>
     <div class="row row-cols-1 row-cols-md-3 g-4" id="activitiesContainer">
-        <!-- 动态生成的活动卡片将放在这里 -->
-    </div>
-
-    <!--        <div class="row row-cols-1 row-cols-md-3 g-4">-->
-    <!--            <div class="col">-->
-    <!--                <div class="card h-100">-->
-    <!--                    <img src="./images/dog.jpg" class="card-img-top" alt="...">-->
-    <!--                    <div class="card-body">-->
-    <!--                        <h5 class="card-title">Card title</h5>-->
-    <!--                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to-->
-    <!--                            additional content. This content is a little bit longer.</p>-->
-    <!--                    </div>-->
-    <!--                    <div class="card-footer">-->
-    <!--                        <small class="text-muted">Last updated 3 mins ago</small>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--            <div class="col">-->
-    <!--                <div class="card h-100">-->
-    <!--                    <img src="./images/dog.jpg" class="card-img-top" alt="...">-->
-    <!--                    <div class="card-body">-->
-    <!--                        <h5 class="card-title">Card title</h5>-->
-    <!--                        <p class="card-text">This card has supporting text below as a natural lead-in to additional-->
-    <!--                            content.</p>-->
-    <!--                    </div>-->
-    <!--                    <div class="card-footer">-->
-    <!--                        <small class="text-muted">Last updated 3 mins ago</small>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--            <div class="col">-->
-    <!--                <div class="card h-100">-->
-    <!--                    <img src="./images/dog.jpg" class="card-img-top" alt="...">-->
-    <!--                    <div class="card-body">-->
-    <!--                        <h5 class="card-title">Card title</h5>-->
-    <!--                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to-->
-    <!--                            additional content. This card has even longer content than the first to show that equal-->
-    <!--                            height action.</p>-->
-    <!--                    </div>-->
-    <!--                    <div class="card-footer">-->
-    <!--                        <small class="text-muted">Last updated 3 mins ago</small>-->
-    <!--                    </div>-->
-    <!--                </div>-->
-    <!--            </div>-->
+        <!-- 動態生成的活動卡片放在這裡 -->
     </div>
 
     <!-- 間距用 -->
@@ -185,10 +140,7 @@
     </footer>
 </div>
 
-<!-- 引入 Bootstrap JavaScript 文件 -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+
 
 <!-- 登入選項的Modal 彈窗 -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
@@ -225,21 +177,44 @@
 </div>
 
 </body>
+<!-- 引入 Bootstrap JavaScript 文件 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 <script>
     $(document).ready(function () {
-        var allActivities = []; // 用于存储从 /act/allAct API 获取的所有活动数据
 
-        // 动态生成并显示活动卡片的函数
+        var allActivities = []; // 儲存從 /act/allAct API 獲取的所有活動數據
+        //請求獲取活動數據
+        $.ajax({
+        url: '/act/allAct',
+        type: 'GET',
+        success: function (activities) {
+            allActivities = activities; // 儲存得到的數據
+            displayActivities(activities, '#activitiesContainer'); // 顯示最新活動
+
+                // 實時搜索邏輯
+            $('#searchInput').on('keyup', function() {
+                var searchTerm = $(this).val().toLowerCase();
+                var filteredActivities = allActivities.filter(function(activity) {
+                    return activity.actName.toLowerCase().includes(searchTerm) ||
+                        activity.actDescr.toLowerCase().includes(searchTerm); // 多字段搜索
+                });
+                displayActivities(filteredActivities, '#activitiesContainer');
+            });
+        },
+        error: function () {
+            alert('無法載入全部的活動數據');
+        }
+    });
+
+        // 動態生成顯示活動卡片
         function displayActivities(activities, container) {
-            var searchTerm = $('#searchInput').val().toLowerCase();
             var content = '';
             $.each(activities, function(index, activity) {
-                var highlightedName = activity.actName;
-                if (searchTerm) {
-                    var regex = new RegExp('(' + searchTerm + ')', 'gi');
-                    highlightedName = highlightedName.replace(regex, '<span class="highlight">$1</span>');
-                }
                 var imageUrl = 'data:image/jpeg;base64,' + activity.actPic;
                 var lastUpdated = new Date(activity.actCrTime).toLocaleString();
                 content += '<div class="col">' +
@@ -259,40 +234,6 @@
             $(container).html(content);
         }
 
-        // 使用 /act/latest API 显示最新的活动
-        $.ajax({
-            url: '/act/latest',
-            type: 'GET',
-            success: function (activities) {
-                displayActivities(activities, '#activitiesContainer'); // 顯示最新活動
-            },
-            error: function () {
-                alert('无法加载最新活动数据');
-            }
-        });
-
-        // 使用 /act/allAct API 得到所有活動數據 用於搜尋
-        $.ajax({
-            url: '/act/allAct',
-            type: 'GET',
-            success: function (activities) {
-                allActivities = activities; // 儲存得到的數據
-
-                // 實時搜索邏輯
-                $('#searchInput').on('keyup', function() {
-                    var searchTerm = $(this).val().toLowerCase();
-                    var filteredActivities = allActivities.filter(function(activity) {
-                        return activity.actName.toLowerCase().includes(searchTerm) ||
-                            activity.actDescr.toLowerCase().includes(searchTerm); // 多字段搜索
-                    });
-                    displayActivities(filteredActivities, '#activitiesContainer');
-                });
-            },
-            error: function () {
-                alert('無法載入全部的活動數據');
-            }
-        });
-
         // 搜索功能
         $('#searchButton').click(function() {
             var searchTerm = $('#searchInput').val().toLowerCase();
@@ -309,46 +250,5 @@
         });
     });
 </script>
-
-<!--<script>-->
-<!--    $(document).ready(function () {-->
-<!--        $.ajax({-->
-<!--            url: '/act/latest', // 替换为您的API端点-->
-<!--            type: 'GET',-->
-<!--            success: function (activities) {-->
-<!--                console.log(activities)-->
-<!--                var content = '';-->
-<!--                $.each(activities, function(index, activity) {-->
-<!--                    // 根據實際使用情況使用正確路徑，这里假设图片路径需要拼接服务器地址-->
-<!--                    var imageUrl = 'data:image/jpeg;base64,' + activity.actPic;-->
-<!--                    var lastUpdated = new Date(activity.actCrTime).toLocaleString(); // 转换日期格式-->
-
-<!--                    content += '<div class="col">' +-->
-<!--                        '<div class="card h-100">' +-->
-<!--                        '<img src="' + imageUrl  + '" class="card-img-top" alt="活動圖片">' +-->
-<!--                        '<div class="card-body">' +-->
-<!--                        '<h5 class="card-title">' + activity.actName + '</h5>' +-->
-<!--                        '<p class="card-text">' + activity.actDescr + '</p>' +-->
-<!--                        '<button type="button" class="btn btn-primary card-button" data-actid="' + activity.actId + '">查看詳情</button>' +-->
-<!--                        '</div>' +-->
-<!--                        '<div class="card-footer">' +-->
-<!--                        '<small class="text-muted">創建時間 ' + lastUpdated + '</small>' +-->
-<!--                        '</div>' +-->
-<!--                        '</div>' +-->
-<!--                        '</div>';-->
-<!--                });-->
-<!--                $('.row.row-cols-1.row-cols-md-3.g-4').html(content);-->
-<!--            },-->
-<!--            error: function () {-->
-<!--                alert('無法載入活動數據');-->
-<!--            }-->
-<!--        });-->
-<!--            // 動態生成按鈕增加監聽-->
-<!--            $(document).on('click', '.card-button', function() {-->
-<!--                var actId = $(this).data('actid'); // 獲取按鈕的actId-->
-<!--                window.location.href = '/activity/' + actId; // 跳轉到相應頁面-->
-<!--            });-->
-<!--    });-->
-<!--</script>-->
 
 </html>

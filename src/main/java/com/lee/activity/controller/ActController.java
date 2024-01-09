@@ -97,15 +97,11 @@ public class ActController {
         // 返回包含更新後的活動的 ResponseEntity，HTTP 狀態碼為 200 OK
     }
 
-    @GetMapping("/act/latest")
-    public ResponseEntity<List<ActVO>> getLatestActivities() {
-        try {
-            List<ActVO> latestTenActivities = actService.getLatestTenActivities();
-            return ResponseEntity.ok(latestTenActivities);
-        } catch (Exception e) {
-            // 在这里处理可能发生的异常
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
+    @GetMapping("/act/actTop5")
+    public ResponseEntity<List<ActVO>> getRecentActivities() {
+        List<ActVO> lastFiveAct = actService.findTop5ByOrderByActCrTimeDesc();
+        return ResponseEntity.ok(lastFiveAct);
+
 
     }
 }

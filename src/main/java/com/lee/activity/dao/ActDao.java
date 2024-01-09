@@ -15,6 +15,7 @@ import java.util.List;
 @Repository
 public interface ActDao extends JpaRepository<ActVO, Integer> {
 
-    List<ActVO> findTop10ByOrderByActCrTimeDesc();
+    // 定義一個方法來找到最新的五筆資料
+    List<ActVO> findTop5ByOrderByActCrTimeDesc();
 
 }

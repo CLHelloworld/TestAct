@@ -63,7 +63,7 @@ public class ActService implements IActService {
 
     //取得最新五筆活動資料
     @Override
-    public List<ActVO> getLatestTenActivities() {
-        return actDao.findTop10ByOrderByActCrTimeDesc();
+    public List<ActVO> findTop5ByOrderByActCrTimeDesc() {
+        return actDao.findTop5ByOrderByActCrTimeDesc();
     }
 }

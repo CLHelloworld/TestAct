@@ -4,6 +4,7 @@ package com.lee.activity.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Timestamp;
@@ -88,5 +89,6 @@ public class ActVO {
 //    @ManyToOne(fetch = FetchType.LAZY)
 //    @JoinColumn(name = "act_type_id", referencedColumnName = "act_type_id")
 //    private ActTypeVO actType;
+
 
 }

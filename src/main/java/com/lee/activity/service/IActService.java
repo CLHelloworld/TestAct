@@ -12,5 +12,5 @@ public interface IActService {
 
     ActVO getActById(Integer id);
 
-    List<ActVO> getLatestTenActivities();
+    List<ActVO> findTop5ByOrderByActCrTimeDesc();
 }
