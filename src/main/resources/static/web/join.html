@@ -12,6 +12,11 @@
         main {
             min-height: calc(100vh - 70px);
         }
+        .card-img-top {
+            width: 100%; /* 设置图片宽度为容器宽度的100% */
+            height: 200px; /* 设置图片高度为固定值，比如200px */
+            object-fit: cover; /* 确保图片在调整大小时不变形 */
+        }
     </style>
 </head>
 
@@ -227,10 +232,11 @@
 
                     content += '<div class="col">' +
                         '<div class="card h-100">' +
-                        '<img src="' + imageUrl  + '" class="card-img-top" alt="活动图片">' +
+                        '<img src="' + imageUrl  + '" class="card-img-top" alt="活動圖片">' +
                         '<div class="card-body">' +
                         '<h5 class="card-title">' + activity.actName + '</h5>' +
                         '<p class="card-text">' + activity.actDescr + '</p>' +
+                        '<button type="button" class="btn btn-primary card-button" data-actid="' + activity.actId + '">查看詳情</button>' +
                         '</div>' +
                         '<div class="card-footer">' +
                         '<small class="text-muted">創建時間 ' + lastUpdated + '</small>' +
@@ -244,6 +250,11 @@
                 alert('無法載入活動數據');
             }
         });
+            // 動態生成按鈕增加監聽
+            $(document).on('click', '.card-button', function() {
+                var actId = $(this).data('actid'); // 獲取按鈕的actId
+                window.location.href = '/activity/' + actId; // 跳轉到相應頁面
+            });
     });
 </script>
 

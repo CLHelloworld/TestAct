@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `project03` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `project03`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: project03
@@ -16,35 +18,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `chat_message`
+-- Table structure for table `activity_type`
 --
 
-DROP TABLE IF EXISTS `chat_message`;
+DROP TABLE IF EXISTS `activity_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `chat_message` (
-  `msg_id` int NOT NULL AUTO_INCREMENT,
-  `sender_id` int NOT NULL,
-  `receiver_id` int NOT NULL,
-  `msg_content` varchar(2000) NOT NULL,
-  `msg_status` tinyint NOT NULL DEFAULT '1',
-  `msg_cr_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`msg_id`),
-  KEY `FK_CHAT_MESSAGE_MEMBERSHIP_A` (`sender_id`),
-  KEY `FK_CHAT_MESSAGE_MEMBERSHIP_B` (`receiver_id`),
-  CONSTRAINT `FK_CHAT_MESSAGE_MEMBERSHIP_A` FOREIGN KEY (`sender_id`) REFERENCES `membership` (`mem_id`),
-  CONSTRAINT `FK_CHAT_MESSAGE_MEMBERSHIP_B` FOREIGN KEY (`receiver_id`) REFERENCES `membership` (`mem_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `activity_type` (
+  `act_type_id` int NOT NULL AUTO_INCREMENT,
+  `act_type_name` varchar(50) NOT NULL,
+  PRIMARY KEY (`act_type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `chat_message`
+-- Dumping data for table `activity_type`
 --
 
-LOCK TABLES `chat_message` WRITE;
-/*!40000 ALTER TABLE `chat_message` DISABLE KEYS */;
-INSERT INTO `chat_message` VALUES (1,1,2,'早安 吃了嗎?',1,'2023-01-01 12:00:00'),(2,3,4,'午安 要去吃一起早午餐嗎?',2,'2023-04-01 13:00:00'),(3,4,6,'晚安 要一起去吃牛肉麵嗎?',2,'2023-01-08 19:00:00'),(4,7,8,'I LOVE YOUUU',4,'2023-03-01 22:00:00'),(5,8,9,'好想翹班ㄚㄚㄚㄚ',3,'2023-05-01 12:20:00'),(6,9,2,'好想去看盧廣仲演唱會喔',1,'2023-11-01 12:00:00');
-/*!40000 ALTER TABLE `chat_message` ENABLE KEYS */;
+LOCK TABLES `activity_type` WRITE;
+/*!40000 ALTER TABLE `activity_type` DISABLE KEYS */;
+INSERT INTO `activity_type` VALUES (1,'旅行'),(2,'爬山'),(3,'運動'),(4,'健身'),(5,'舞蹈'),(6,'心靈'),(7,'創作'),(8,'藝術'),(9,'寫作'),(10,'音樂');
+/*!40000 ALTER TABLE `activity_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -56,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-09 14:31:52
+-- Dump completed on 2024-01-09 16:50:12

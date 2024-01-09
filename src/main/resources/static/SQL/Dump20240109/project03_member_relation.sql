@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `project03` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `project03`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: project03
@@ -16,27 +18,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `venue_type`
+-- Table structure for table `member_relation`
 --
 
-DROP TABLE IF EXISTS `venue_type`;
+DROP TABLE IF EXISTS `member_relation`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `venue_type` (
-  `ven_type_id` int NOT NULL AUTO_INCREMENT,
-  `ven_type_name` varchar(50) NOT NULL,
-  PRIMARY KEY (`ven_type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `member_relation` (
+  `mem_a_id` int NOT NULL,
+  `mem_b_id` int NOT NULL,
+  `mem_relation_status` tinyint NOT NULL,
+  PRIMARY KEY (`mem_a_id`,`mem_b_id`),
+  KEY `FK_MEMBER_RELATION_MEMBERSHIP_B` (`mem_b_id`),
+  CONSTRAINT `FK_MEMBER_RELATION_MEMBERSHIP_A` FOREIGN KEY (`mem_a_id`) REFERENCES `membership` (`mem_id`),
+  CONSTRAINT `FK_MEMBER_RELATION_MEMBERSHIP_B` FOREIGN KEY (`mem_b_id`) REFERENCES `membership` (`mem_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `venue_type`
+-- Dumping data for table `member_relation`
 --
 
-LOCK TABLES `venue_type` WRITE;
-/*!40000 ALTER TABLE `venue_type` DISABLE KEYS */;
-INSERT INTO `venue_type` VALUES (1,'A'),(2,'B'),(3,'C');
-/*!40000 ALTER TABLE `venue_type` ENABLE KEYS */;
+LOCK TABLES `member_relation` WRITE;
+/*!40000 ALTER TABLE `member_relation` DISABLE KEYS */;
+INSERT INTO `member_relation` VALUES (1,2,1),(3,4,2),(5,6,3),(7,8,1),(9,10,2),(11,12,3);
+/*!40000 ALTER TABLE `member_relation` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -48,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-09 14:31:52
+-- Dump completed on 2024-01-09 16:50:13

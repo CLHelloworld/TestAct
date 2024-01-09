@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `project03` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `project03`;
 -- MySQL dump 10.13  Distrib 8.0.34, for Win64 (x86_64)
 --
 -- Host: localhost    Database: project03
@@ -16,30 +18,27 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `activity_followed`
+-- Table structure for table `functionality`
 --
 
-DROP TABLE IF EXISTS `activity_followed`;
+DROP TABLE IF EXISTS `functionality`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `activity_followed` (
-  `act_id` int NOT NULL,
-  `mem_id` int NOT NULL,
-  PRIMARY KEY (`act_id`,`mem_id`),
-  KEY `FK_ACTIVITY_FOLLOWED_MEMBERSHIP` (`mem_id`),
-  CONSTRAINT `FK_ACTIVITY_FOLLOWED_ACTIVITY` FOREIGN KEY (`act_id`) REFERENCES `activity` (`act_id`),
-  CONSTRAINT `FK_ACTIVITY_FOLLOWED_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `functionality` (
+  `func_id` int NOT NULL AUTO_INCREMENT,
+  `func_descr` varchar(2000) NOT NULL,
+  PRIMARY KEY (`func_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `activity_followed`
+-- Dumping data for table `functionality`
 --
 
-LOCK TABLES `activity_followed` WRITE;
-/*!40000 ALTER TABLE `activity_followed` DISABLE KEYS */;
-INSERT INTO `activity_followed` VALUES (10,1),(9,2),(8,3),(7,4),(6,5),(5,6),(4,7),(3,8),(2,9),(1,10);
-/*!40000 ALTER TABLE `activity_followed` ENABLE KEYS */;
+LOCK TABLES `functionality` WRITE;
+/*!40000 ALTER TABLE `functionality` DISABLE KEYS */;
+INSERT INTO `functionality` VALUES (1,'Manage Users'),(2,'Generate Reports'),(3,'Schedule Events'),(4,'Access Settings'),(5,'View Analytics'),(6,'Read-Only Dashboard'),(7,'Edit Profile'),(8,'Request Time Off'),(9,'View Calendar'),(10,'Send Announcements');
+/*!40000 ALTER TABLE `functionality` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-09 14:31:51
+-- Dump completed on 2024-01-09 16:50:12
