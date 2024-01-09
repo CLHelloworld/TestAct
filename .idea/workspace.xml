@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="瀏覽活動-自動生成活動完成">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activityType/controll/ActTypeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/dao/ActTypeDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activityType/dao/ActTypeDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActTypeVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activityType/model/ActTypeVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActTypeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activityType/service/ActTypeService.java" afterDir="false" />
-    </list>
+    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="瀏覽活動-自動生成活動完成" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -193,7 +187,7 @@
       <workItem from="1704630755719" duration="1676000" />
       <workItem from="1704638845484" duration="875000" />
       <workItem from="1704692827207" duration="33532000" />
-      <workItem from="1704736705025" duration="982000" />
+      <workItem from="1704736705025" duration="1168000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
@@ -419,7 +413,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704734288421</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="瀏覽活動-自動生成活動完成">
+      <option name="closed" value="true" />
+      <created>1704737861984</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1704737861984</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
