@@ -7,7 +7,7 @@
     <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="資料庫更改完成">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActTypeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActTypeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/create.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/join.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -197,6 +197,7 @@
       <workItem from="1704800598034" duration="5135000" />
       <workItem from="1704811985900" duration="7648000" />
       <workItem from="1704865861811" duration="5838000" />
+      <workItem from="1704888701754" duration="4981000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
