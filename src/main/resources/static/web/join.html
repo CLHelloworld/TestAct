@@ -64,35 +64,8 @@
 
     <div class="container mt-3">
         <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group me-2" role="group" aria-label="First group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="all">全部</button>
-            </div>
-            <div class="btn-group me-2" role="group" aria-label="Second group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="">待</button>
-            </div>
-            <div class="btn-group me-2" role="group" aria-label="Third group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="">待</button>
-            </div>
-            <div class="btn-group me-2" role="group" aria-label="Fourth group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="">待</button>
-            </div>
-            <div class="btn-group me-2" role="group" aria-label="Fourth group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="">待</button>
-            </div>
-            <div class="btn-group me-2" role="group" aria-label="Fourth group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="">待</button>
-            </div>
-            <div class="btn-group me-2" role="group" aria-label="Fourth group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="">待</button>
-            </div>
-            <div class="btn-group me-2" role="group" aria-label="Fourth group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="">待</button>
-            </div>
-            <div class="btn-group me-2" role="group" aria-label="Fourth group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="">待</button>
-            </div>
-            <div class="btn-group me-2" role="group" aria-label="Fourth group">
-                <button type="button" class="btn btn-outline-secondary" data-filter="">待</button>
+            <div id="categoryButtons" class="btn-group me-2" role="group" aria-label="First group">
+                <!-- 动态生成的按钮将会放在这里 -->
             </div>
             <!-- 其他類型的按鈕可以在這裡添加 -->
         </div>
@@ -186,8 +159,28 @@
 
 <script>
     $(document).ready(function () {
-
         var allActivities = []; // 儲存從 /act/allAct API 獲取的所有活動數據
+
+        // 请求获取类别数据并生成按钮
+        function fetchCategories() {
+            $.ajax({
+                url: '/act/actTypes', // 替换为您的类别API路径
+                type: 'GET',
+                dataType: 'json',
+                success: function(categories) {
+                    var buttonsHtml = '';
+                    $.each(categories, function(index, category) {
+                        // 生成类别按钮，附带类别ID
+                        buttonsHtml += '<button type="button" class="btn btn-outline-secondary category-button" data-id="' + category.actTypeId + '">' + category.actTypeName + '</button>';
+                    });
+                    $('#categoryButtons').html(buttonsHtml);
+                },
+                error: function() {
+                    alert('載入類別數據失敗！');
+                }
+            });
+        }
+
         //請求獲取活動數據
         $.ajax({
         url: '/act/allAct',
@@ -195,6 +188,9 @@
         success: function (activities) {
             allActivities = activities; // 儲存得到的數據
             displayActivities(activities, '#activitiesContainer'); // 顯示最新活動
+
+            // 載入和顯示類別按鈕
+            fetchCategories();
 
                 // 實時搜索邏輯
             $('#searchInput').on('keyup', function() {
@@ -234,6 +230,9 @@
             $(container).html(content);
         }
 
+
+
+
         // 搜索功能
         $('#searchButton').click(function() {
             var searchTerm = $('#searchInput').val().toLowerCase();
@@ -241,6 +240,16 @@
                 return activity.actName.toLowerCase().includes(searchTerm);
             });
             displayActivities(filteredActivities, '#activitiesContainer'); // 顯示搜尋結果
+        });
+
+        // 绑定类别按钮点击事件
+        $('#categoryButtons').on('click', '.category-button', function () {
+            var typeId = $(this).data('id'); // 获取该按钮的类别名称
+            var filteredActivities = allActivities.filter(function (activity) {
+                // 假设活动数据中有一个字段表示类别名称
+                return activity.actType === typeId; // 根据类别ID过滤活动
+            });
+            displayActivities(filteredActivities, '#activitiesContainer'); // 顯示與類別名稱匹配的活動
         });
 
         // 為動態生成的詳情按鈕添加點擊監聽事件

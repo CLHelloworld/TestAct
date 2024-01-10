@@ -17,7 +17,7 @@ public class ActTypeController {
 
     @Autowired
     private ActTypeService actTypeService;
-
+    //獲取所有類別
     @GetMapping("/actTypes")
     public ResponseEntity<List<ActTypeVO>> getAllActTypes() {
         List<ActTypeVO> types = actTypeService.getAllActTypes();
