@@ -43,16 +43,6 @@
             border-color: var(--button-hover-color);
         }
 
-        /* 辅助按钮样式 */
-        .btn-secondary {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: #5a6268; /* 按钮辅助色悬停时的颜色 */
-            border-color: #545b62; /* 按钮边框辅助色悬停时的颜色 */
-        }
 
         /* 特殊按钮样式 - 最新活动 */
         #latestActivityButton {
@@ -68,6 +58,12 @@
         /* 卡片样式 */
         .card {
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+            transition: transform 0.3s ease; /* 平滑变换效果 */
+        }
+
+        .card:hover {
+            transform: translateY(-5px); /* 鼠标悬停时卡片上移 */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* 增强阴影 */
         }
 
         .card-img-top {
@@ -128,6 +124,26 @@
             background-color: #004085; /* 聚焦或點擊時顏色 */
             outline: none; /* 移除聚焦輪廓 */
         }
+
+        /* 官方活動樣式 */
+        .official-activity-ribbon {
+            position: absolute;
+            top: 25px;
+            right: -15px;
+            z-index: 1; /* 确保它在卡片上方 */
+            padding: 5px 15px;
+            background: linear-gradient(45deg, #f6d365 0%, #fda085 100%); /* 渐变背景色 */
+            color: white;
+            font-weight: bold;
+            text-align: center;
+            transform: rotate(45deg);
+            transform-origin: top right;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 轻微阴影 */
+            border: 1px solid #fff; /* 白色边框 */
+            font-size: 14px; /* 字体大小 */
+        }
+
+
     </style>
 
 </head>
@@ -181,6 +197,8 @@
         </div>
         <!-- 新增“最新活动”按钮 -->
         <button id="latestActivityButton" class="btn btn-outline-info rounded-pill m-1">最新活動</button>
+        <!-- 新增“官方活动”按钮 -->
+        <button id="officialActivityButton" class="btn btn-outline-success rounded-pill m-1">官方活動</button>
     </div>
 
     <!-- 間距用 -->
@@ -333,8 +351,14 @@
             $.each(activities, function (index, activity) {
                 var imageUrl = 'data:image/jpeg;base64,' + activity.actPic;
                 var lastUpdated = new Date(activity.actCrTime).toLocaleString();
+
+                // 检查是否是官方活动
+                var isOfficialActivity = activity.memId === 1;
+                var ribbonHtml = isOfficialActivity ? '<div class="official-activity-ribbon">官方</div>' : '';
+
+
                 content += '<div class="col">' +
-                    '<div class="card h-100">' +
+                    '<div class="card h-100 position-relative">' + ribbonHtml + //插入緞帶
                     '<img src="' + imageUrl + '" class="card-img-top" alt="活動圖片">' +
                     '<div class="card-body">' +
                     '<h5 class="card-title">' + activity.actName + '</h5>' +
@@ -364,7 +388,6 @@
         $('#categoryButtons').on('click', '.category-button', function () {
             var typeId = $(this).data('id'); // 獲取該按鈕的類別名稱
             var filteredActivities = allActivities.filter(function (activity) {
-
                 return activity.actType === typeId; // 根據類別ID過濾活動
             });
             displayActivities(filteredActivities, '#activitiesContainer'); // 顯示與類別名稱匹配的活動
@@ -376,9 +399,9 @@
             window.location.href = '/activity/' + actId;
         });
 
-        //显示最新活动的函数
+        //顯示最新活動
         function displayLatestActivities() {
-            // 根据actCrTime对活动进行排序，最近的时间排在前面
+            // 根据actCrTime對活動進行排序，最近的時間排在前面
             var sortedActivities = allActivities.slice().sort(function (a, b) {
                 return isSortedDescending
                     ? new Date(b.actCrTime) - new Date(a.actCrTime)
@@ -400,6 +423,18 @@
             displayLatestActivities();
         });
 
+
+        // 顯示官方活動的函數
+        function displayOfficialActivities() {
+            var filteredActivities = allActivities.filter(function (activity) {
+                return activity.memId === 1; // 篩選 memId 為 1 的活動
+            });
+            displayActivities(filteredActivities, '#activitiesContainer');
+        }
+
+        $('#officialActivityButton').on('click', function () {
+            displayOfficialActivities();
+        });
 
     });
 </script>

@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="更改背景顏色,搜索框大小,Type按鈕調整">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="更新活動-活動資料自動帶入ok&#10;更新活動-預覽圖(待完成)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/create.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/updateAct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/updateAct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/join.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -202,7 +198,7 @@
       <workItem from="1704888701754" duration="5063000" />
       <workItem from="1704899123743" duration="4593000" />
       <workItem from="1704952023568" duration="1633000" />
-      <workItem from="1706352485604" duration="10193000" />
+      <workItem from="1706352485604" duration="11656000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
@@ -452,7 +448,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704894723348</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="更新活動-活動資料自動帶入ok&#10;更新活動-預覽圖(待完成)">
+      <option name="closed" value="true" />
+      <created>1706369276076</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1706369276076</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,6 +508,7 @@
     <MESSAGE value="瀏覽活動-自動生成活動完成" />
     <MESSAGE value="資料庫更改完成" />
     <MESSAGE value="更改背景顏色,搜索框大小,Type按鈕調整" />
-    <option name="LAST_COMMIT_MESSAGE" value="更改背景顏色,搜索框大小,Type按鈕調整" />
+    <MESSAGE value="更新活動-活動資料自動帶入ok&#10;更新活動-預覽圖(待完成)" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新活動-活動資料自動帶入ok&#10;更新活動-預覽圖(待完成)" />
   </component>
 </project>
