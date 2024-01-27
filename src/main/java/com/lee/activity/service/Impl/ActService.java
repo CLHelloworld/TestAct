@@ -45,8 +45,6 @@ public class ActService implements IActService {
             actVO.setActCrTime(new Date());
             return actDao.save(actVO);
         } else {
-            // 处理找不到活动的情况，例如抛出异常
-//             throw new SomeNotFoundException("Activity not found with id " + id);
             return null;
         }
     }

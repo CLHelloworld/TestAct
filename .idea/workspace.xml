@@ -7,6 +7,10 @@
     <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="更改背景顏色,搜索框大小,Type按鈕調整">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/create.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/updateAct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/updateAct.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,6 +202,7 @@
       <workItem from="1704888701754" duration="5063000" />
       <workItem from="1704899123743" duration="4593000" />
       <workItem from="1704952023568" duration="1633000" />
+      <workItem from="1706352485604" duration="10193000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />

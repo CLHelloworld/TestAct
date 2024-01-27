@@ -13,10 +13,9 @@ import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
 
-@RestController
 // 標註這是一個 REST 控制器，自動將方法的返回值序列化為 JSON
+@RestController
 @RequestMapping
-// 設定這個控制器處理的基礎路徑，所有路徑都會加上 "/activities" 前綴
 public class ActController {
 
     // 注入 ActService，用於處理與活動相關的業務邏輯
@@ -32,8 +31,8 @@ public class ActController {
     }
 
     // 根據 ID 獲取單個活動
-    @GetMapping("/act/{id}")
     // 處理 GET 請求至 "/activities/{id}"，其中 {id} 是活動的ID
+    @GetMapping("/act/{id}")
     public ResponseEntity<ActVO> getActivityById(@PathVariable Integer id) {
         // 使用 @PathVariable 獲取 URL 中的 id 參數
         ActVO actVO = actService.getActById(id);
@@ -43,16 +42,16 @@ public class ActController {
     }
 
     // 創建新活動
-    @PostMapping("/act/addAct")
     // 處理 POST 請求至 "/activities"，用於創建新的活動
+    @PostMapping("/act/addOrUpdateAct")
     public ResponseEntity<ActVO> createActivity(
-
+            @RequestParam(name = "actId", required = false) Integer actId,
             @RequestParam("actName") String actName,
             @RequestParam("actUpper") Integer actUpper,
             @RequestParam("regStartTime") Timestamp regStartTime,
             @RequestParam("regEndTime") Timestamp regEndTime,
             @RequestParam("actStartTime") Timestamp actStartTime,
-            @RequestParam("actEndtime") Timestamp actEndtime,
+            @RequestParam("actEndTime") Timestamp actEndTime,
             @RequestParam("actLoc") String actLoc,
             @RequestParam("actDescr") String actDescr,
             @RequestParam("actType") Integer actType,
@@ -64,11 +63,10 @@ public class ActController {
         actVoRequest.setRegStartTime(regStartTime);
         actVoRequest.setRegEndTime(regEndTime);
         actVoRequest.setActStartTime(actStartTime);
-        actVoRequest.setActEndTime(actEndtime);
+        actVoRequest.setActEndTime(actEndTime);
         actVoRequest.setActLoc(actLoc);
         actVoRequest.setActDescr(actDescr);
         actVoRequest.setActType(actType);
-
 
         // 處理文件數據
         if (actPic != null && !actPic.isEmpty()) {
@@ -81,21 +79,18 @@ public class ActController {
             }
 
         }
-        ActVO actVO = actService.createAct(actVoRequest);
-        return ResponseEntity.status(HttpStatus.CREATED).body(actVO);
+
+        if (actId != null) {
+            // 如果有actId，則執行更新活動
+            ActVO updatedAct = actService.updateAct(actId, actVoRequest);
+            return ResponseEntity.status(HttpStatus.OK).body(updatedAct);
+        } else {
+            // 如果沒有actId，則執行新增活動
+            ActVO actVO = actService.createAct(actVoRequest);
+            return ResponseEntity.status(HttpStatus.CREATED).body(actVO);
+        }
     }
 
-    //  更新活動
-    @PutMapping("/act/{id}")
-    // 處理 PUT 請求至 "/activities/{id}"，用於更新特定ID的活動
-    public ResponseEntity<ActVO> updateActivity(@PathVariable Integer id, @RequestBody ActVoRequest request) {
-        // 使用 @PathVariable 獲取 URL 中的 id 參數
-        // 使用 @RequestBody 獲取請求體中的 actDetails 對象
-        ActVO updatedAct = actService.updateAct(id, request);
-        // 調用 service 層的方法更新特定 ID 的活動
-        return ResponseEntity.ok(updatedAct);
-        // 返回包含更新後的活動的 ResponseEntity，HTTP 狀態碼為 200 OK
-    }
 
     @GetMapping("/act/actTop5")
     public ResponseEntity<List<ActVO>> getRecentActivities() {

@@ -211,7 +211,7 @@
     </header>
 </div>
 
-<main class="container mt-5">
+<main class="container mt-0">
     <section class="my-5">
         <h2 class="mb-3 text-center">舉辦活動</h2>
         <p class="text-center mb-4">歡迎舉辦精彩活動！填寫以下資訊完成舉辦。</p>
@@ -304,90 +304,6 @@
         </div>
     </section>
 </main>
-<!--------------------------------原版表單----------------------------------->
-<!--<main id="container-main" class="container mt-5">-->
-<!--    <section id="join-event" class="mt-5">-->
-<!--        <h2>舉辦活動</h2>-->
-<!--        <p>歡迎舉辦精彩活動！填寫以下資訊完成舉辦。</p>-->
-<!--        &lt;!&ndash; 添加需要的表單元素或其他內容 &ndash;&gt;-->
-<!--        <div>-->
-<!--            <form id="actCreatForm" action="/activities" method="post">-->
-<!--                <label for="actName">活動名稱:</label>-->
-<!--                <input-->
-<!--                        type="text"-->
-<!--                        id="actName"-->
-<!--                        name="actName"-->
-<!--                        maxlength="50"-->
-<!--                        required-->
-<!--                />-->
-<!--                <label for="actUpper">報名人數上限:</label>-->
-<!--                <input-->
-<!--                        type="number"-->
-<!--                        id="actUpper"-->
-<!--                        name="actUpper"-->
-<!--                        maxlength="50"-->
-<!--                        required-->
-<!--                />-->
-
-<!--                <label for="actType">活動類型:</label>-->
-<!--                <select id="actType" name="actType" required>-->
-<!--                    &lt;!&ndash; 动态填充活动类型选项 &ndash;&gt;-->
-<!--                </select>-->
-
-<!--                <div class="row">-->
-<!--                    <div class="col-md-6">-->
-<!--                        <label for="regStartTime">活動報名開始時間:</label>-->
-<!--                        <input type="datetime-local" id="regStartTime" name="regStartTime" required/>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-6">-->
-<!--                        <label for="regEndTime">活動報名結束時間:</label>-->
-<!--                        <input type="datetime-local" id="regEndTime" name="regEndTime" required/>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="row">-->
-<!--                    <div class="col-md-6">-->
-<!--                        <label for="actStartTime">活動開始時間:</label>-->
-<!--                        <input type="datetime-local" id="actStartTime" name="actStartTime" required/>-->
-<!--                    </div>-->
-<!--                    <div class="col-md-6">-->
-<!--                        <label for="actEndTime">活動結束時間:</label>-->
-<!--                        <input type="datetime-local" id="actEndTime" name="actEndTime" required/>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--                <div>-->
-<!--                    <label for="actPic">新增活動圖片:</label>-->
-<!--                    <input-->
-<!--                            type="file"-->
-<!--                            id="actPic"-->
-<!--                            accept="image/gif, image/jpeg, image/png">-->
-<!--                    <img id="preview" src="" style="width: 465px; height: auto">-->
-<!--                </div>-->
-
-<!--                <label for="actLoc">活動地點:</label>-->
-<!--                <input-->
-<!--                        type="text"-->
-<!--                        id="actLoc"-->
-<!--                        name="actLoc"-->
-<!--                        maxlength="50"-->
-<!--                        required-->
-<!--                />-->
-
-<!--                <label for="actDescr">活動說明:</label>-->
-<!--                <textarea-->
-<!--                        id="actDescr"-->
-<!--                        name="actDescr"-->
-<!--                        maxlength="2000"-->
-<!--                        required-->
-<!--                ></textarea>-->
-
-<!--                <input type="submit" value="創建活動"/>-->
-
-<!--            </form>-->
-<!--        </div>-->
-<!--    </section>-->
-<!--</main>-->
-
 <div class="container" id="foot-div">
     <footer class="py-3 my-4">
         <ul class="nav justify-content-center border-bottom pb-3 mb-3">
@@ -506,15 +422,14 @@
             return;// 若表單無效 阻止提交
         }
 
-
         // 如果驗證通過，繼續表單提交邏輯
         let formData = new FormData();
         formData.append("actName", $('#actName').val());
         formData.append("actUpper", $('#actUpper').val());
-        formData.append("regStartTime", formatDateTime($('#regStartTime').val()));
-        formData.append("regEndTime", formatDateTime($('#regEndTime').val()));
-        formData.append("actStartTime", formatDateTime($('#actStartTime').val()));
-        formData.append("actEndtime", formatDateTime($('#actEndTime').val()));
+        formData.append("regStartTime", regStart);
+        formData.append("regEndTime", regEnd);
+        formData.append("actStartTime", actStart);
+        formData.append("actEndTime", actEnd);
         formData.append("actLoc", $('#actLoc').val());
         formData.append("actDescr", $('#actDescr').val());
         formData.append("actType", $('#actType').val());
@@ -522,13 +437,14 @@
 
         let fileInput = $("#actPic")[0];
         let file = fileInput.files[0];
+
         if (file) {
             formData.append("actPic", file);
         }
 
         // 發送 AJAX 請求
         $.ajax({
-            url: '/act/addAct', // 表單的 action 屬性值
+            url: '/act/addOrUpdateAct', // 表單的 action 屬性值
             type: 'POST',
             data: formData,
             processData: false, // 不要處理發送的數據
