@@ -11,49 +11,75 @@
     <style>
         /* 整体背景色 */
         body {
-            background: linear-gradient(to right, rgb(243, 134, 183), rgb(108, 225, 254));
-        linear-gradient(to right, #F386B7, #6CE1FE); /* Standard syntax */
-            /* 為整個頁面設置背景顏色 */
+            background: #f5f5f5; /* 浅灰色背景 */
             color: #333; /* 深灰色文字 */
         }
 
         /* 主题色 - 蓝色系 */
         :root {
-            --primary-color: #2a4d8e; /* 主色调 */
-            --secondary-color: #6c757d; /* 辅助色 */
-            --button-hover-color: #0056b3; /* 按钮悬停颜色 */
+            --primary-color: #ffffff; /* 主色调 */
+            --secondary-color: #0056b3; /* 辅助色 */
+            --button-hover-color: #e7dede; /* 按钮悬停颜色 */
+            --theme-color: #98c5f5;
+            --theme-hover-color: #0056b3;
         }
 
-        /* 按钮基本样式 */
-        .btn {
-            border-radius: 5px; /* 圆角 */
-            padding: 10px 15px; /* 内边距 */
-            font-size: 16px; /* 字体大小 */
-            transition: background-color 0.3s, box-shadow 0.3s; /* 过渡动画 */
+        /* 按鈕樣式統一 */
+        .category-button, #latestActivityButton, #officialActivityButton, .card-button {
+            position: relative;
+            min-width: 100px;
+            background: none; /* 默认背景色 */
+            font-size: 1rem;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s;
+            border: none; /* 去掉边框 */
         }
 
-        /* 主题按钮样式 */
-        .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+        /* 按钮内的文本样式 */
+        .category-button span, #latestActivityButton span, #officialActivityButton span, .card-button span {
+            z-index: 3;
+            position: relative;
+            transition: color 0.3s; /* 添加颜色变化的过渡效果 */
         }
 
-        .btn-primary:hover {
-            background-color: var(--button-hover-color);
-            border-color: var(--button-hover-color);
+        /* 按钮的背景动画效果 */
+        .category-button:before, #latestActivityButton:before, #officialActivityButton:before, .card-button:before {
+            z-index: 2; /* 确保这个值低于按钮文本的z-index */
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 52px; /* 初始宽度 */
+            height: 100%;
+            background-color: var(--theme-color); /* 动画背景色 */
+            transition: all 0.85s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            border-radius: 20px; /* 和按钮相同的圆角 */
+        }
+
+        /* 悬停效果 */
+        .category-button:hover:before, #latestActivityButton:hover:before, #officialActivityButton:hover:before, .card-button:hover:before {
+            width: 100%; /* 悬停时扩展到整个按钮 */
+        }
+
+        /* 按钮文本颜色在悬停时的变化 */
+        .category-button:hover span, #latestActivityButton:hover span, #officialActivityButton:hover span, .card-button:hover span {
+            color: #000000; /* 悬停时的文本颜色 */
         }
 
 
-        /* 特殊按钮样式 - 最新活动 */
-        #latestActivityButton {
-            background-color: #28a745; /* 绿色 */
-            border-color: #28a745;
+        /* 搜索框和按鈕對齊 */
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
         }
 
-        #latestActivityButton:hover {
-            background-color: #218838;
-            border-color: #1e7e34;
-        }
 
         /* 卡片样式 */
         .card {
@@ -76,7 +102,7 @@
         /* 查看詳情按鈕樣式 */
         .card-button {
             background-color: var(--primary-color); /* 主题色 */
-            color: white; /* 文字颜色 */
+            color: #000000; /* 文字颜色 */
             border: none; /* 去除边框 */
             border-radius: 20px; /* 圆角 */
             padding: 10px 20px; /* 内边距 */
@@ -98,33 +124,6 @@
             outline: none; /* 去除焦点轮廓 */
         }
 
-        /* 搜索按鈕基本樣式 */
-        #searchButton {
-            background-color: #007bff; /* 主題藍色 */
-            color: white; /* 文字顏色 */
-            border: none; /* 移除邊框 */
-            border-radius: 30px; /* 圓角設計 */
-            padding: 10px 20px; /* 內邊距 */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 輕微陰影 */
-            transition: all 0.3s ease; /* 平滑過渡效果 */
-            font-size: 16px; /* 字體大小 */
-            letter-spacing: 0.5px; /* 字母間距 */
-        }
-
-        /* 搜索按鈕懸停效果 */
-        #searchButton:hover {
-            background-color: #0056b3; /* 懸停時顏色變化 */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 增強陰影效果 */
-            transform: translateY(-2px); /* 輕微上移 */
-        }
-
-        /* 搜索按鈕聚焦和激活狀態 */
-        #searchButton:focus,
-        #searchButton:active {
-            background-color: #004085; /* 聚焦或點擊時顏色 */
-            outline: none; /* 移除聚焦輪廓 */
-        }
-
         /* 官方活動樣式 */
         .official-activity-ribbon {
             position: absolute;
@@ -143,7 +142,10 @@
             font-size: 14px; /* 字体大小 */
         }
 
-
+        /* 最新活动和官方活动按钮的样式 */
+        #latestActivityButton, #officialActivityButton {
+            color: #000000; /* 设置默认文字颜色为黑色 */
+        }
     </style>
 
 </head>
@@ -183,7 +185,7 @@
         <!-- 在這裡添加你需要的表單元素或其他內容 -->
 
         <!-- 搜索框 -->
-        <div class="search-container mb-4 w-25">
+          <div class="search-container mb-4 w-25">
             <input type="text" id="searchInput" class="form-control me-3 border-0 box-shadow-none" placeholder="搜索活動...">
             <button
                     class="btn btn-primary rounded-3 px-4">
@@ -191,7 +193,8 @@
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                 </svg>
             </button>
-        </div>
+          </div>
+
     </section>
 
     <div class="container mt-3">
@@ -201,9 +204,9 @@
             </div>
         </div>
         <!-- 新增“最新活动”按钮 -->
-        <button id="latestActivityButton" class="btn btn-outline-info rounded-pill m-1">最新活動</button>
+        <button id="latestActivityButton" class="btn btn-outline-info rounded-pill m-1"><span>最新活動</span></button>
         <!-- 新增“官方活动”按钮 -->
-        <button id="officialActivityButton" class="btn btn-outline-success rounded-pill m-1">官方活動</button>
+        <button id="officialActivityButton" class="btn btn-outline-success rounded-pill m-1"><span>官方活動</span></button>
     </div>
 
     <!-- 間距用 -->
@@ -310,8 +313,8 @@
                     $.each(categories, function (index, category) {
                         // 生成類別按鈕,附帶類別ID
                         // 現代化按鈕格式，加入徽章和邊框圓角
-                        buttonsHtml += '<button type="button" class="btn btn-outline-danger rounded-pill m-1 category-button" data-id="' + category.actTypeId + '">';
-                        buttonsHtml += '<span class="badge bg-danger">' + category.actTypeName + '</span>';
+                        buttonsHtml += '<button type="button" class="btn btn-outline rounded-pill m-1 category-button" data-id="' + category.actTypeId + '">';
+                        buttonsHtml += '<span>' + category.actTypeName + '</span>';
                         buttonsHtml += '</button>';
                     });
                     $('#categoryButtons').html(buttonsHtml);
@@ -366,9 +369,9 @@
                     '<div class="card h-100 position-relative">' + ribbonHtml + //插入緞帶
                     '<img src="' + imageUrl + '" class="card-img-top" alt="活動圖片">' +
                     '<div class="card-body">' +
-                    '<h5 class="card-title">' + activity.actName + '</h5>' +
+                    '<h4 class="card-title">' + '<b><I>' +activity.actName + '</b></I>' + '</h4>' +
                     '<p class="card-text">' + activity.actDescr + '</p>' +
-                    '<button type="button" class="btn btn-primary card-button" data-actid="' + activity.actId + '">查看詳情</button>' +
+                    '<button type="button" class="btn btn-primary card-button" data-actid="' + activity.actId + '"><span>查看詳情</span></button>' +
                     '</div>' +
                     '<div class="card-footer">' +
                     '<small class="text-muted">創建時間 ' + lastUpdated + '</small>' +
