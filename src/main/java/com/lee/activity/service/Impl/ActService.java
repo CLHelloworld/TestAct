@@ -13,9 +13,10 @@ import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
+
+// 標記為Spring的服務類別，Spring會管理這個類的實例（即Spring Bean）
 @Component
 @Slf4j
-// 標記為Spring的服務類別，Spring會管理這個類的實例（即Spring Bean）
 public class ActService implements IActService {
 
     @Autowired
@@ -32,7 +33,7 @@ public class ActService implements IActService {
 
         modelMapper.map(actVoRequest,actVO);
         actVO.setActCrTime(new Date());
-        actVO.setActStatus((byte) 1);
+        actVO.setActStatus((byte) 4);
         return actDao.save(actVO);
     }
 
@@ -56,7 +57,7 @@ public class ActService implements IActService {
 
     @Override
     public ActVO getActById(Integer id) {
-        return actDao.findById(id).orElse(null); // 或者处理找不到活动的情况
+        return actDao.findById(id).orElse(null);
     }
 
     //取得最新五筆活動資料

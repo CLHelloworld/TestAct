@@ -25,7 +25,7 @@ public class ActVO {
     //	@ManyToOne
 //	@JoinColumn(name = "mem_id" , referencedColumnName ="mem_id" )
 	@Column(name = "mem_id")
-    private Integer memId = 1;
+    private Integer memId ;
 
     @Column(name = "act_name", nullable = false, length = 50)
     private String actName;
@@ -51,7 +51,7 @@ public class ActVO {
     private Byte actCount = 0;
 
     @Column(name = "act_status")
-    private Byte actStatus = 0;
+    private Byte actStatus;
 
     //	@Temporal(TemporalType.TIMESTAMP)
     @Column(name = "act_cr_time")

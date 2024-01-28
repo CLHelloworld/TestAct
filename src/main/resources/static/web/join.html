@@ -25,7 +25,7 @@
         }
 
         /* 按鈕樣式統一 */
-        .category-button, #latestActivityButton, #officialActivityButton, .card-button {
+        .category-button, #latestActivityButton, #officialActivityButton, #ongoingActivityButton, #registrationOpenButton, .card-button {
             position: relative;
             min-width: 100px;
             background: none; /* 默认背景色 */
@@ -42,14 +42,14 @@
         }
 
         /* 按钮内的文本样式 */
-        .category-button span, #latestActivityButton span, #officialActivityButton span, .card-button span {
+        .category-button span, #latestActivityButton span, #officialActivityButton span, #ongoingActivityButton span, #registrationOpenButton span, .card-button span {
             z-index: 3;
             position: relative;
             transition: color 0.3s; /* 添加颜色变化的过渡效果 */
         }
 
         /* 按钮的背景动画效果 */
-        .category-button:before, #latestActivityButton:before, #officialActivityButton:before, .card-button:before {
+        .category-button:before, #latestActivityButton:before, #officialActivityButton:before, #ongoingActivityButton:before, #registrationOpenButton:before, .card-button:before {
             z-index: 2; /* 确保这个值低于按钮文本的z-index */
             content: '';
             position: absolute;
@@ -63,12 +63,12 @@
         }
 
         /* 悬停效果 */
-        .category-button:hover:before, #latestActivityButton:hover:before, #officialActivityButton:hover:before, .card-button:hover:before {
+        .category-button:hover:before, #latestActivityButton:hover:before, #officialActivityButton:hover:before,#ongoingActivityButton:hover:before, #registrationOpenButton:hover:before, .card-button:hover:before {
             width: 100%; /* 悬停时扩展到整个按钮 */
         }
 
         /* 按钮文本颜色在悬停时的变化 */
-        .category-button:hover span, #latestActivityButton:hover span, #officialActivityButton:hover span, .card-button:hover span {
+        .category-button:hover span, #latestActivityButton:hover span, #officialActivityButton:hover span,#ongoingActivityButton:hover span, #registrationOpenButton:hover span, .card-button:hover span {
             color: #000000; /* 悬停时的文本颜色 */
         }
 
@@ -185,15 +185,17 @@
         <!-- 在這裡添加你需要的表單元素或其他內容 -->
 
         <!-- 搜索框 -->
-          <div class="search-container mb-4 w-25">
-            <input type="text" id="searchInput" class="form-control me-3 border-0 box-shadow-none" placeholder="搜索活動...">
+        <div class="search-container mb-4 w-25">
+            <input type="text" id="searchInput" class="form-control me-3 border-0 box-shadow-none"
+                   placeholder="搜索活動...">
             <button
                     class="btn btn-primary rounded-3 px-4">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="bi bi-search" viewBox="0 0 16 16">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="white" class="bi bi-search"
+                     viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
                 </svg>
             </button>
-          </div>
+        </div>
 
     </section>
 
@@ -206,7 +208,12 @@
         <!-- 新增“最新活动”按钮 -->
         <button id="latestActivityButton" class="btn btn-outline-info rounded-pill m-1"><span>最新活動</span></button>
         <!-- 新增“官方活动”按钮 -->
-        <button id="officialActivityButton" class="btn btn-outline-success rounded-pill m-1"><span>官方活動</span></button>
+        <button id="officialActivityButton" class="btn btn-outline-success rounded-pill m-1"><span>官方活動</span>
+        </button>
+        <!-- 新增“進行中的活動”按钮 -->
+        <button id="ongoingActivityButton" class="btn btn-outline-warning rounded-pill m-1"><span>進行中</span></button>
+        <!-- 新增“報名中的活動”按钮 -->
+        <button id="registrationOpenButton" class="btn btn-outline-danger rounded-pill m-1"><span>報名中</span></button>
     </div>
 
     <!-- 間距用 -->
@@ -296,7 +303,6 @@
 
 <script>
 
-    //針對最新最後活動
     var isSortedDescending = true; // 默認降序排序
 
     $(document).ready(function () {
@@ -369,7 +375,7 @@
                     '<div class="card h-100 position-relative">' + ribbonHtml + //插入緞帶
                     '<img src="' + imageUrl + '" class="card-img-top" alt="活動圖片">' +
                     '<div class="card-body">' +
-                    '<h4 class="card-title">' + '<b><I>' +activity.actName + '</b></I>' + '</h4>' +
+                    '<h4 class="card-title">' + '<b><I>' + activity.actName + '</b></I>' + '</h4>' +
                     '<p class="card-text">' + activity.actDescr + '</p>' +
                     '<button type="button" class="btn btn-primary card-button" data-actid="' + activity.actId + '"><span>查看詳情</span></button>' +
                     '</div>' +
@@ -440,9 +446,37 @@
             displayActivities(filteredActivities, '#activitiesContainer');
         }
 
+        // 顯示進行中的活動
+        function displayOngoingActivities() {
+            var filteredActivities = allActivities.filter(function (activity) {
+                return activity.actStatus === 3; // 篩選 actStatus 為 3 (進行中) 的活動
+            });
+            displayActivities(filteredActivities, '#activitiesContainer');
+        }
+
+        // 顯示報名中的活動
+        function displayRegistrationOpenActivities() {
+            var filteredActivities = allActivities.filter(function (activity) {
+                return activity.actStatus === 4; // 篩選 actStatus 為 4 (報名中) 的活動
+            });
+            displayActivities(filteredActivities, '#activitiesContainer');
+        }
+
+        // 綁定官方活動按鈕點擊事件
         $('#officialActivityButton').on('click', function () {
             displayOfficialActivities();
         });
+
+        // 綁定進行中按鈕點擊事件
+        $('#ongoingActivityButton').on('click', function () {
+            displayOngoingActivities();
+        });
+
+        // 綁定報名中按鈕點擊事件
+        $('#registrationOpenButton').on('click', function () {
+            displayRegistrationOpenActivities();
+        });
+
 
     });
 </script>

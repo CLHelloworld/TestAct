@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.Timestamp;
 import java.util.List;
@@ -46,6 +47,7 @@ public class ActController {
     @PostMapping("/act/addOrUpdateAct")
     public ResponseEntity<ActVO> createActivity(
             @RequestParam(name = "actId", required = false) Integer actId,
+//            @SessionAttribute("memId") Integer memId,
             @RequestParam("actName") String actName,
             @RequestParam("actUpper") Integer actUpper,
             @RequestParam("regStartTime") Timestamp regStartTime,
@@ -55,10 +57,16 @@ public class ActController {
             @RequestParam("actLoc") String actLoc,
             @RequestParam("actDescr") String actDescr,
             @RequestParam("actType") Integer actType,
-            @RequestParam(required = false) MultipartFile actPic
+            @RequestParam(required = false) MultipartFile actPic,
+            HttpSession session
+
+
     ) {
+        Integer memId = (Integer) session.getAttribute("memId");
+
         ActVoRequest actVoRequest = new ActVoRequest();
         actVoRequest.setActName(actName);
+        actVoRequest.setMemId(1);//1為測試用 要使用時改成memId
         actVoRequest.setActUpper(actUpper);
         actVoRequest.setRegStartTime(regStartTime);
         actVoRequest.setRegEndTime(regEndTime);
