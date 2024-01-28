@@ -18,7 +18,7 @@ public class ActStatusUpdateService {
         this.actDao = actDao;
     }
     /* @Scheduled
-    這個註解是用來定義排程任務的。它的 cron 屬性允許你使用類似於 Unix cron
+    這個註解是用來定義排程任務。它的 cron 屬性允許你使用類似於 Unix cron
     表達式的格式來設定任務的執行時間。
     每個 cron 表達式都由六或七個時間和日期欄位組成，代表不同的時間單位。
     規則為 秒,分,小時,日,月,星期 */

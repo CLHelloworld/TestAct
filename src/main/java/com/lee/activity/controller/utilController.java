@@ -12,9 +12,9 @@ public class utilController {
         this.actStatusUpdateService = actStatusUpdateService;
     }
 
-    @GetMapping("/Act/update-act-statuses")
+    @GetMapping("/act/update-act-statuses")
     public String updateActStatuses() {
         actStatusUpdateService.updateActStatuses();
-        return "Activity statuses updated";
+        return "排程器啟動完畢";
     }
 }
