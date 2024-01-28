@@ -25,10 +25,10 @@
         }
 
         /* 按鈕樣式統一 */
-        .category-button, #latestActivityButton, #officialActivityButton, #ongoingActivityButton, #registrationOpenButton, .card-button {
+        .category-button, #latestActivityButton, #officialActivityButton, #ongoingActivityButton, #registrationOpenButton, #endActivityButton,.card-button {
             position: relative;
             min-width: 100px;
-            background: none; /* 默认背景色 */
+            background: white; /* 默认背景色 */
             font-size: 1rem;
             font-weight: bold;
             text-align: center;
@@ -42,14 +42,14 @@
         }
 
         /* 按钮内的文本样式 */
-        .category-button span, #latestActivityButton span, #officialActivityButton span, #ongoingActivityButton span, #registrationOpenButton span, .card-button span {
+        .category-button span, #latestActivityButton span, #officialActivityButton span, #ongoingActivityButton span, #registrationOpenButton span, #endActivityButton span,.card-button span {
             z-index: 3;
             position: relative;
             transition: color 0.3s; /* 添加颜色变化的过渡效果 */
         }
 
         /* 按钮的背景动画效果 */
-        .category-button:before, #latestActivityButton:before, #officialActivityButton:before, #ongoingActivityButton:before, #registrationOpenButton:before, .card-button:before {
+        .category-button:before, #latestActivityButton:before, #officialActivityButton:before, #ongoingActivityButton:before, #registrationOpenButton:before,  #endActivityButton:before,.card-button:before {
             z-index: 2; /* 确保这个值低于按钮文本的z-index */
             content: '';
             position: absolute;
@@ -63,12 +63,12 @@
         }
 
         /* 悬停效果 */
-        .category-button:hover:before, #latestActivityButton:hover:before, #officialActivityButton:hover:before,#ongoingActivityButton:hover:before, #registrationOpenButton:hover:before, .card-button:hover:before {
+        .category-button:hover:before, #latestActivityButton:hover:before, #officialActivityButton:hover:before,#ongoingActivityButton:hover:before, #registrationOpenButton:hover:before, #endActivityButton:hover:before,.card-button:hover:before {
             width: 100%; /* 悬停时扩展到整个按钮 */
         }
 
         /* 按钮文本颜色在悬停时的变化 */
-        .category-button:hover span, #latestActivityButton:hover span, #officialActivityButton:hover span,#ongoingActivityButton:hover span, #registrationOpenButton:hover span, .card-button:hover span {
+        .category-button:hover span, #latestActivityButton:hover span, #officialActivityButton:hover span,#ongoingActivityButton:hover span, #registrationOpenButton:hover span, #endActivityButton:hover span , .card-button:hover span {
             color: #000000; /* 悬停时的文本颜色 */
         }
 
@@ -124,6 +124,24 @@
             outline: none; /* 去除焦点轮廓 */
         }
 
+        /* 已结束活动的卡片样式 */
+        .card-ended {
+            background-color: #e0e0e0; /* 浅灰色背景表示活动已结束 */
+            color: #9e9e9e; /* 淡化文字颜色 */
+            position: relative; /* 为水印定位 */
+        }
+
+        .card-ended::after {
+            content: "已结束";
+            position: absolute;
+            top: 80%;
+            left: 80%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 1.5rem;
+            color: rgba(0, 0, 0, 0.1); /* 水印文字颜色 */
+            z-index: 0;
+        }
+
         /* 官方活動樣式 */
         .official-activity-ribbon {
             position: absolute;
@@ -143,7 +161,7 @@
         }
 
         /* 最新活动和官方活动按钮的样式 */
-        #latestActivityButton, #officialActivityButton,#ongoingActivityButton, #registrationOpenButton {
+        #latestActivityButton, #officialActivityButton,#ongoingActivityButton, #registrationOpenButton, #endActivityButton {
             color: #000000; /* 设置默认文字颜色为黑色 */
         }
     </style>
@@ -208,12 +226,13 @@
         <!-- 新增“最新活动”按钮 -->
         <button id="latestActivityButton" class="btn btn-outline-info rounded-pill m-1"><span>最新活動</span></button>
         <!-- 新增“官方活动”按钮 -->
-        <button id="officialActivityButton" class="btn btn-outline-success rounded-pill m-1"><span>官方活動</span>
-        </button>
+        <button id="officialActivityButton" class="btn btn-outline-success rounded-pill m-1"><span>官方活動</span></button>
         <!-- 新增“進行中的活動”按钮 -->
         <button id="ongoingActivityButton" class="btn btn-outline-warning rounded-pill m-1"><span>進行中</span></button>
         <!-- 新增“報名中的活動”按钮 -->
         <button id="registrationOpenButton" class="btn btn-outline-danger rounded-pill m-1"><span>報名中</span></button>
+        <!-- 新增“已結束的活動”按钮 -->
+        <button id="endActivityButton" class="btn btn-outline-danger rounded-pill m-1"><span>已結束</span></button>
     </div>
 
     <!-- 間距用 -->
@@ -337,8 +356,10 @@
             url: '/act/allAct',
             type: 'GET',
             success: function (activities) {
-                allActivities = activities; // 儲存得到的數據
-                displayActivities(activities, '#activitiesContainer'); // 顯示最新活動
+                allActivities = activities.sort(function(a, b) {
+                        return b.actStatus - a.actStatus;
+                }); // 儲存得到的數據
+                displayActivities(allActivities, '#activitiesContainer'); // 顯示最新活動
 
                 // 載入和顯示類別按鈕
                 fetchCategories();
@@ -369,10 +390,10 @@
                 // 检查是否是官方活动
                 var isOfficialActivity = activity.memId === 1;
                 var ribbonHtml = isOfficialActivity ? '<div class="official-activity-ribbon">官方</div>' : '';
-
+                var cardClass = activity.actStatus === 1 ? ' card-ended' : '';
 
                 content += '<div class="col">' +
-                    '<div class="card h-100 position-relative">' + ribbonHtml + //插入緞帶
+                    '<div class="card h-100 position-relative' + cardClass + '">' + ribbonHtml + //插入緞帶
                     '<img src="' + imageUrl + '" class="card-img-top" alt="活動圖片">' +
                     '<div class="card-body">' +
                     '<h4 class="card-title">' + '<b><I>' + activity.actName + '</b></I>' + '</h4>' +
@@ -415,6 +436,7 @@
 
         //顯示最新活動
         function displayLatestActivities() {
+
             // 根据actCrTime對活動進行排序，最近的時間排在前面
             var sortedActivities = allActivities.slice().sort(function (a, b) {
                 return isSortedDescending
@@ -462,6 +484,14 @@
             displayActivities(filteredActivities, '#activitiesContainer');
         }
 
+        // 顯示已結束的活動
+        function displayEndActivities() {
+            var filteredActivities = allActivities.filter(function (activity) {
+                return activity.actStatus === 1; // 篩選 actStatus 為 4 (已結束) 的活動
+            });
+            displayActivities(filteredActivities, '#activitiesContainer');
+        }
+
         // 綁定官方活動按鈕點擊事件
         $('#officialActivityButton').on('click', function () {
             displayOfficialActivities();
@@ -477,6 +507,10 @@
             displayRegistrationOpenActivities();
         });
 
+        // 綁定已結束按鈕點擊事件
+        $('#endActivityButton').on('click', function () {
+            displayEndActivities();
+        });
 
     });
 </script>
