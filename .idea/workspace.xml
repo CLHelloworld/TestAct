@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="瀏覽活動-配色更改進行中">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/model/ActVO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" afterDir="false" />
+    <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="瀏覽活動-按鈕增加ok&#10;瀏覽活動-判斷狀態(進行中)">
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/join.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -204,7 +200,7 @@
       <workItem from="1706352485604" duration="11731000" />
       <workItem from="1706370758694" duration="2880000" />
       <workItem from="1706383407125" duration="4370000" />
-      <workItem from="1706445080440" duration="5601000" />
+      <workItem from="1706445080440" duration="5903000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />
@@ -486,7 +482,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706387769361</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="瀏覽活動-按鈕增加ok&#10;瀏覽活動-判斷狀態(進行中)">
+      <option name="closed" value="true" />
+      <created>1706451138164</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1706451138164</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -514,7 +518,6 @@
       <path value="$PROJECT_DIR$/.." />
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
-    <MESSAGE value="商品功能 - category 使用Enum類型" />
     <MESSAGE value="商品功能 - 設定返回時間格式和時區,Date類型無時間還需要調整" />
     <MESSAGE value="商品功能 - 實作新增商品,category編碼問題待處理" />
     <MESSAGE value="商品功能 - 實作修改商品,category編碼問題(OK)" />
@@ -539,6 +542,7 @@
     <MESSAGE value="更新活動-活動資料自動帶入ok&#10;更新活動-預覽圖(待完成)" />
     <MESSAGE value="瀏覽活動-官方活動完成" />
     <MESSAGE value="瀏覽活動-配色更改進行中" />
-    <option name="LAST_COMMIT_MESSAGE" value="瀏覽活動-配色更改進行中" />
+    <MESSAGE value="瀏覽活動-按鈕增加ok&#10;瀏覽活動-判斷狀態(進行中)" />
+    <option name="LAST_COMMIT_MESSAGE" value="瀏覽活動-按鈕增加ok&#10;瀏覽活動-判斷狀態(進行中)" />
   </component>
 </project>
