@@ -18,27 +18,40 @@ USE `project03`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `activity_type`
+-- Table structure for table `post_report`
 --
 
-DROP TABLE IF EXISTS `activity_type`;
+DROP TABLE IF EXISTS `post_report`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `activity_type` (
-  `act_type_id` int NOT NULL AUTO_INCREMENT,
-  `act_type_name` varchar(50) NOT NULL,
-  PRIMARY KEY (`act_type_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `post_report` (
+  `rep_id` int NOT NULL AUTO_INCREMENT,
+  `post_id` int NOT NULL,
+  `mem_id` int NOT NULL,
+  `emp_id` int DEFAULT NULL,
+  `rep_title` varchar(50) NOT NULL,
+  `rep_content` varchar(2000) NOT NULL,
+  `rep_pic` longblob,
+  `rep_status` tinyint NOT NULL DEFAULT '1',
+  `rep_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`rep_id`),
+  KEY `FK_POST_REPORT_POST` (`post_id`),
+  KEY `FK_POST_REPORT_MEMBERSHIP` (`mem_id`),
+  KEY `FK_POST_REPORT_EMPLOYEE` (`emp_id`),
+  CONSTRAINT `FK_POST_REPORT_EMPLOYEE` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`),
+  CONSTRAINT `FK_POST_REPORT_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`),
+  CONSTRAINT `FK_POST_REPORT_POST` FOREIGN KEY (`post_id`) REFERENCES `personal_post` (`post_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `activity_type`
+-- Dumping data for table `post_report`
 --
 
-LOCK TABLES `activity_type` WRITE;
-/*!40000 ALTER TABLE `activity_type` DISABLE KEYS */;
-INSERT INTO `activity_type` VALUES (1,'旅行'),(2,'爬山'),(3,'運動'),(4,'健身'),(5,'舞蹈'),(6,'心靈'),(7,'創作'),(8,'藝術'),(9,'寫作'),(10,'音樂');
-/*!40000 ALTER TABLE `activity_type` ENABLE KEYS */;
+LOCK TABLES `post_report` WRITE;
+/*!40000 ALTER TABLE `post_report` DISABLE KEYS */;
+INSERT INTO `post_report` VALUES (1,1,1,NULL,'貼文內容','內容含有不雅字眼',NULL,1,'2023-03-04 22:00:00'),(2,6,6,NULL,'貼文內容','賣黃牛票',NULL,1,'2023-03-10 22:00:00');
+/*!40000 ALTER TABLE `post_report` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -50,4 +63,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-11 17:29:51
+-- Dump completed on 2024-01-30  3:53:32

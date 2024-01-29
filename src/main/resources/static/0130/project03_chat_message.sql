@@ -18,30 +18,35 @@ USE `project03`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `member_interest`
+-- Table structure for table `chat_message`
 --
 
-DROP TABLE IF EXISTS `member_interest`;
+DROP TABLE IF EXISTS `chat_message`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `member_interest` (
-  `mem_id` int NOT NULL,
-  `act_type_id` int NOT NULL,
-  PRIMARY KEY (`mem_id`,`act_type_id`),
-  KEY `FK_MEMBER_INTEREST_ACTIVITY_TYPE` (`act_type_id`),
-  CONSTRAINT `FK_MEMBER_INTEREST_ACTIVITY_TYPE` FOREIGN KEY (`act_type_id`) REFERENCES `activity_type` (`act_type_id`),
-  CONSTRAINT `FK_MEMBER_INTEREST_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `chat_message` (
+  `msg_id` int NOT NULL AUTO_INCREMENT,
+  `sender_id` int NOT NULL,
+  `receiver_id` int NOT NULL,
+  `msg_content` varchar(2000) NOT NULL,
+  `msg_status` tinyint NOT NULL DEFAULT '1',
+  `msg_cr_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`msg_id`),
+  KEY `FK_CHAT_MESSAGE_MEMBERSHIP_A` (`sender_id`),
+  KEY `FK_CHAT_MESSAGE_MEMBERSHIP_B` (`receiver_id`),
+  CONSTRAINT `FK_CHAT_MESSAGE_MEMBERSHIP_A` FOREIGN KEY (`sender_id`) REFERENCES `membership` (`mem_id`),
+  CONSTRAINT `FK_CHAT_MESSAGE_MEMBERSHIP_B` FOREIGN KEY (`receiver_id`) REFERENCES `membership` (`mem_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `member_interest`
+-- Dumping data for table `chat_message`
 --
 
-LOCK TABLES `member_interest` WRITE;
-/*!40000 ALTER TABLE `member_interest` DISABLE KEYS */;
-INSERT INTO `member_interest` VALUES (1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10);
-/*!40000 ALTER TABLE `member_interest` ENABLE KEYS */;
+LOCK TABLES `chat_message` WRITE;
+/*!40000 ALTER TABLE `chat_message` DISABLE KEYS */;
+INSERT INTO `chat_message` VALUES (1,1,2,'早安 吃了嗎?',1,'2023-01-01 12:00:00'),(2,3,4,'午安 要去吃一起早午餐嗎?',2,'2023-04-01 13:00:00'),(3,4,6,'晚安 要一起去吃牛肉麵嗎?',2,'2023-01-08 19:00:00'),(4,7,8,'I LOVE YOUUU',4,'2023-03-01 22:00:00'),(5,8,9,'好想翹班ㄚㄚㄚㄚ',3,'2023-05-01 12:20:00'),(6,9,2,'好想去看盧廣仲演唱會喔',1,'2023-11-01 12:00:00');
+/*!40000 ALTER TABLE `chat_message` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +58,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-11 17:29:53
+-- Dump completed on 2024-01-30  3:53:31

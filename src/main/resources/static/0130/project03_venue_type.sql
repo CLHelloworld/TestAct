@@ -18,30 +18,27 @@ USE `project03`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `employee_permission`
+-- Table structure for table `venue_type`
 --
 
-DROP TABLE IF EXISTS `employee_permission`;
+DROP TABLE IF EXISTS `venue_type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `employee_permission` (
-  `emp_id` int NOT NULL,
-  `func_id` int NOT NULL,
-  PRIMARY KEY (`emp_id`,`func_id`),
-  KEY `FK_EMPLOYEE_PERMISSION_FUNCTIONALITY` (`func_id`),
-  CONSTRAINT `FK_EMPLOYEE_PERMISSION_EMPLOYEE` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`),
-  CONSTRAINT `FK_EMPLOYEE_PERMISSION_FUNCTIONALITY` FOREIGN KEY (`func_id`) REFERENCES `functionality` (`func_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `venue_type` (
+  `ven_type_id` int NOT NULL AUTO_INCREMENT,
+  `ven_type_name` varchar(50) NOT NULL,
+  PRIMARY KEY (`ven_type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `employee_permission`
+-- Dumping data for table `venue_type`
 --
 
-LOCK TABLES `employee_permission` WRITE;
-/*!40000 ALTER TABLE `employee_permission` DISABLE KEYS */;
-INSERT INTO `employee_permission` VALUES (10,1),(9,2),(3,3),(1,4),(4,5),(5,6),(2,7),(6,8),(7,9),(8,10);
-/*!40000 ALTER TABLE `employee_permission` ENABLE KEYS */;
+LOCK TABLES `venue_type` WRITE;
+/*!40000 ALTER TABLE `venue_type` DISABLE KEYS */;
+INSERT INTO `venue_type` VALUES (1,'A'),(2,'B'),(3,'C');
+/*!40000 ALTER TABLE `venue_type` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-11 17:29:52
+-- Dump completed on 2024-01-30  3:53:32

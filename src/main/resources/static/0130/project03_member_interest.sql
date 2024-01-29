@@ -18,40 +18,30 @@ USE `project03`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `post_report`
+-- Table structure for table `member_interest`
 --
 
-DROP TABLE IF EXISTS `post_report`;
+DROP TABLE IF EXISTS `member_interest`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `post_report` (
-  `rep_id` int NOT NULL AUTO_INCREMENT,
-  `post_id` int NOT NULL,
+CREATE TABLE `member_interest` (
   `mem_id` int NOT NULL,
-  `emp_id` int DEFAULT NULL,
-  `rep_title` varchar(50) NOT NULL,
-  `rep_content` varchar(2000) NOT NULL,
-  `rep_pic` longblob,
-  `rep_status` tinyint NOT NULL DEFAULT '1',
-  `rep_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY (`rep_id`),
-  KEY `FK_POST_REPORT_POST` (`post_id`),
-  KEY `FK_POST_REPORT_MEMBERSHIP` (`mem_id`),
-  KEY `FK_POST_REPORT_EMPLOYEE` (`emp_id`),
-  CONSTRAINT `FK_POST_REPORT_EMPLOYEE` FOREIGN KEY (`emp_id`) REFERENCES `employee` (`emp_id`),
-  CONSTRAINT `FK_POST_REPORT_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`),
-  CONSTRAINT `FK_POST_REPORT_POST` FOREIGN KEY (`post_id`) REFERENCES `personal_post` (`post_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `act_type_id` int NOT NULL,
+  PRIMARY KEY (`mem_id`,`act_type_id`),
+  KEY `FK_MEMBER_INTEREST_ACTIVITY_TYPE` (`act_type_id`),
+  CONSTRAINT `FK_MEMBER_INTEREST_ACTIVITY_TYPE` FOREIGN KEY (`act_type_id`) REFERENCES `activity_type` (`act_type_id`),
+  CONSTRAINT `FK_MEMBER_INTEREST_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `post_report`
+-- Dumping data for table `member_interest`
 --
 
-LOCK TABLES `post_report` WRITE;
-/*!40000 ALTER TABLE `post_report` DISABLE KEYS */;
-INSERT INTO `post_report` VALUES (1,1,1,NULL,'貼文內容','內容含有不雅字眼',NULL,1,'2023-03-04 22:00:00'),(2,6,6,NULL,'貼文內容','賣黃牛票',NULL,1,'2023-03-10 22:00:00');
-/*!40000 ALTER TABLE `post_report` ENABLE KEYS */;
+LOCK TABLES `member_interest` WRITE;
+/*!40000 ALTER TABLE `member_interest` DISABLE KEYS */;
+INSERT INTO `member_interest` VALUES (1,1),(2,2),(3,3),(4,4),(5,5),(6,6),(7,7),(8,8),(9,9),(10,10);
+/*!40000 ALTER TABLE `member_interest` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -63,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-11 17:29:50
+-- Dump completed on 2024-01-30  3:53:31

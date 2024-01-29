@@ -18,30 +18,33 @@ USE `project03`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `activity_followed`
+-- Table structure for table `personal_post`
 --
 
-DROP TABLE IF EXISTS `activity_followed`;
+DROP TABLE IF EXISTS `personal_post`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `activity_followed` (
-  `act_id` int NOT NULL,
+CREATE TABLE `personal_post` (
+  `post_id` int NOT NULL AUTO_INCREMENT,
   `mem_id` int NOT NULL,
-  PRIMARY KEY (`act_id`,`mem_id`),
-  KEY `FK_ACTIVITY_FOLLOWED_MEMBERSHIP` (`mem_id`),
-  CONSTRAINT `FK_ACTIVITY_FOLLOWED_ACTIVITY` FOREIGN KEY (`act_id`) REFERENCES `activity` (`act_id`),
-  CONSTRAINT `FK_ACTIVITY_FOLLOWED_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `post_title` varchar(50) NOT NULL,
+  `post_content` longblob,
+  `post_status` tinyint NOT NULL DEFAULT '2',
+  `post_cr_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`post_id`),
+  KEY `FK_PERSONAL_POST_MEMBERSHIP` (`mem_id`),
+  CONSTRAINT `FK_PERSONAL_POST_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `activity_followed`
+-- Dumping data for table `personal_post`
 --
 
-LOCK TABLES `activity_followed` WRITE;
-/*!40000 ALTER TABLE `activity_followed` DISABLE KEYS */;
-INSERT INTO `activity_followed` VALUES (10,1),(9,2),(8,3),(7,4),(6,5),(5,6),(4,7),(3,8),(2,9),(1,10);
-/*!40000 ALTER TABLE `activity_followed` ENABLE KEYS */;
+LOCK TABLES `personal_post` WRITE;
+/*!40000 ALTER TABLE `personal_post` DISABLE KEYS */;
+INSERT INTO `personal_post` VALUES (1,1,'肚子餓',_binary '乾有人要一起吃鹹酥雞嗎',2,'2023-03-03 22:00:00'),(2,2,'肚子好胖',_binary '有人要一起去健身房嗎',2,'2023-03-03 20:00:00'),(3,3,'嚕嚕嚕嚕',NULL,2,'2023-03-03 22:00:00'),(4,4,'心情好差',_binary '哭哭哭哭',1,'2023-03-04 12:00:00'),(5,5,'我沒錢',_binary '有人要養我嗎><',3,'2023-03-07 20:00:00'),(6,6,'演唱會門票',_binary '我有周杰倫的黃牛門票要的+1',2,'2023-03-09 22:00:00');
+/*!40000 ALTER TABLE `personal_post` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -53,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-11 17:29:51
+-- Dump completed on 2024-01-30  3:53:31

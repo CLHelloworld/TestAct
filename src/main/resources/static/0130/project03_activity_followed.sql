@@ -18,37 +18,30 @@ USE `project03`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `activity_registration`
+-- Table structure for table `activity_followed`
 --
 
-DROP TABLE IF EXISTS `activity_registration`;
+DROP TABLE IF EXISTS `activity_followed`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `activity_registration` (
-  `act_reg_id` int NOT NULL AUTO_INCREMENT,
-  `mem_id` int NOT NULL,
+CREATE TABLE `activity_followed` (
   `act_id` int NOT NULL,
-  `reg_total` int NOT NULL,
-  `reg_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `reg_status` tinyint NOT NULL DEFAULT '2',
-  `is_act_part` tinyint NOT NULL DEFAULT '2',
-  `act_rating` double DEFAULT NULL,
-  PRIMARY KEY (`act_reg_id`),
-  KEY `FK_ACTIVITY_REGISTRATION_MEMBERSHIP` (`mem_id`),
-  KEY `FK_ACTIVITY_REGISTRATION_ACTIVITY` (`act_id`),
-  CONSTRAINT `FK_ACTIVITY_REGISTRATION_ACTIVITY` FOREIGN KEY (`act_id`) REFERENCES `activity` (`act_id`),
-  CONSTRAINT `FK_ACTIVITY_REGISTRATION_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `mem_id` int NOT NULL,
+  PRIMARY KEY (`act_id`,`mem_id`),
+  KEY `FK_ACTIVITY_FOLLOWED_MEMBERSHIP` (`mem_id`),
+  CONSTRAINT `FK_ACTIVITY_FOLLOWED_ACTIVITY` FOREIGN KEY (`act_id`) REFERENCES `activity` (`act_id`),
+  CONSTRAINT `FK_ACTIVITY_FOLLOWED_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `activity_registration`
+-- Dumping data for table `activity_followed`
 --
 
-LOCK TABLES `activity_registration` WRITE;
-/*!40000 ALTER TABLE `activity_registration` DISABLE KEYS */;
-INSERT INTO `activity_registration` VALUES (1,1,1,1,'2023-12-13 12:00:00',3,2,4.5),(2,2,2,2,'2023-12-13 12:10:00',2,2,4),(3,3,3,1,'2023-12-13 12:20:00',3,2,4.8),(4,4,4,3,'2023-12-13 12:30:00',3,2,3.7),(5,5,5,2,'2023-12-13 12:40:00',2,2,4.2),(6,1,6,1,'2023-12-13 12:50:00',1,2,4.9),(7,2,7,2,'2023-12-13 13:00:00',2,2,3.5),(8,3,8,1,'2023-12-13 13:10:00',3,2,4.6),(9,4,9,3,'2023-12-13 13:20:00',3,2,3.9),(10,5,10,2,'2023-12-13 13:30:00',2,2,4.3);
-/*!40000 ALTER TABLE `activity_registration` ENABLE KEYS */;
+LOCK TABLES `activity_followed` WRITE;
+/*!40000 ALTER TABLE `activity_followed` DISABLE KEYS */;
+INSERT INTO `activity_followed` VALUES (10,1),(9,2),(8,3),(7,4),(6,5),(5,6),(4,7),(3,8),(2,9),(1,10);
+/*!40000 ALTER TABLE `activity_followed` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -60,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-11 17:29:53
+-- Dump completed on 2024-01-30  3:53:31

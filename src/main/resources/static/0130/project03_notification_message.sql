@@ -18,31 +18,33 @@ USE `project03`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `member_relation`
+-- Table structure for table `notification_message`
 --
 
-DROP TABLE IF EXISTS `member_relation`;
+DROP TABLE IF EXISTS `notification_message`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `member_relation` (
-  `mem_a_id` int NOT NULL,
-  `mem_b_id` int NOT NULL,
-  `mem_relation_status` tinyint NOT NULL,
-  PRIMARY KEY (`mem_a_id`,`mem_b_id`),
-  KEY `FK_MEMBER_RELATION_MEMBERSHIP_B` (`mem_b_id`),
-  CONSTRAINT `FK_MEMBER_RELATION_MEMBERSHIP_A` FOREIGN KEY (`mem_a_id`) REFERENCES `membership` (`mem_id`),
-  CONSTRAINT `FK_MEMBER_RELATION_MEMBERSHIP_B` FOREIGN KEY (`mem_b_id`) REFERENCES `membership` (`mem_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+CREATE TABLE `notification_message` (
+  `notify_id` int NOT NULL AUTO_INCREMENT,
+  `mem_id` int NOT NULL,
+  `notify_title` varchar(50) NOT NULL,
+  `notify_content` varchar(2000) NOT NULL,
+  `notify_status` tinyint NOT NULL DEFAULT '1',
+  `notify_time` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`notify_id`),
+  KEY `FK_NOTIFICATION_MESSAGE_MEMBERSHIP` (`mem_id`),
+  CONSTRAINT `FK_NOTIFICATION_MESSAGE_MEMBERSHIP` FOREIGN KEY (`mem_id`) REFERENCES `membership` (`mem_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `member_relation`
+-- Dumping data for table `notification_message`
 --
 
-LOCK TABLES `member_relation` WRITE;
-/*!40000 ALTER TABLE `member_relation` DISABLE KEYS */;
-INSERT INTO `member_relation` VALUES (1,2,1),(3,4,2),(5,6,3),(7,8,1),(9,10,2),(11,12,3);
-/*!40000 ALTER TABLE `member_relation` ENABLE KEYS */;
+LOCK TABLES `notification_message` WRITE;
+/*!40000 ALTER TABLE `notification_message` DISABLE KEYS */;
+INSERT INTO `notification_message` VALUES (1,1,'活動通知','提醒你,2天後有做伙活動要開始囉',1,'2023-04-04 12:00:00'),(2,2,'場地通知','提醒你,2天後有租借教室型的場地',2,'2023-05-04 12:00:00'),(3,3,'關注通知','江秋已關注你',1,'2023-06-04 12:00:00'),(4,4,'系統通知','祝各位銀色情人節快樂',2,'2023-07-14 12:00:00'),(5,5,'系統通知','祝各位綠色情人節快樂',1,'2023-08-14 12:00:00'),(6,6,'系統通知','祝各位相片情人節快樂',2,'2023-09-14 12:00:00'),(7,7,'系統通知','祝各位相片情人節快樂',1,'2023-09-14 12:00:00');
+/*!40000 ALTER TABLE `notification_message` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +56,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-01-11 17:29:53
+-- Dump completed on 2024-01-30  3:53:31
