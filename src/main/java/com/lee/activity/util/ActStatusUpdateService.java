@@ -22,7 +22,7 @@ public class ActStatusUpdateService {
     表達式的格式來設定任務的執行時間。
     每個 cron 表達式都由六或七個時間和日期欄位組成，代表不同的時間單位。
     規則為 秒,分,小時,日,月,星期 */
-//  @Scheduled(cron = "0 0 * * * *") // 每小時的開始(第 0分鐘的第 0秒)
+//    @Scheduled(cron = "0 0 * * * *") // 每小時的開始(第 0分鐘的第 0秒)
     @Transactional
     public void updateActStatuses() {
         List<ActVO> activities = actDao.findAll();

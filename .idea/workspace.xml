@@ -5,9 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="feb303e4-13e4-45dd-bf80-f5f688046efc" name="Changes" comment="增加排程器(測試ok)">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/AllController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/controller/ActController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/join.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/dao/ActDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/dao/ActDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/IActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/IActService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/service/Impl/ActService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/lee/activity/util/ActStatusUpdateService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/lee/activity/util/ActStatusUpdateService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/actdetails.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/actdetails.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/activity.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/activity.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/create.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/createAct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/customer.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/customer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/join.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/joinAct.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/member.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/member.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/rent.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/web/rent.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/web/updateAct.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/updateAct.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +106,7 @@
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;project.structure.last.edited&quot;: &quot;模組&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -107,11 +125,11 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\T14 Gen 3\Desktop\TestAct\src\main\resources" />
+      <recent name="C:\Users\T14 Gen 3\Desktop\TestAct\src\main\resources\static\templates" />
       <recent name="C:\Users\T14 Gen 3\Desktop\TestAct\src\main\resources\static\SQL" />
       <recent name="C:\Users\bnb00\Desktop\專題\Activity111\src\main\resources\static\web" />
       <recent name="C:\Users\T14 Gen 3\Desktop\TestAct\src\main\resources\static" />
-      <recent name="C:\Users\bnb00\Desktop\專題\Activity\src\main\resources\static" />
-      <recent name="C:\Users\bnb00\Desktop\專題\Activity\src\main\resources\templates" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.lee.springbootmall.controller" />
@@ -205,6 +223,11 @@
       <workItem from="1706445080440" duration="12331000" />
       <workItem from="1706464137691" duration="354000" />
       <workItem from="1706532723398" duration="4024000" />
+      <workItem from="1706592992138" duration="7426000" />
+      <workItem from="1706601536627" duration="720000" />
+      <workItem from="1706604184817" duration="1557000" />
+      <workItem from="1706607159192" duration="873000" />
+      <workItem from="1706609207287" duration="1810000" />
     </task>
     <task id="LOCAL-00001" summary="初始化">
       <option name="closed" value="true" />

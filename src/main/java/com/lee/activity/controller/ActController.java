@@ -99,10 +99,4 @@ public class ActController {
         }
     }
 
-    @GetMapping("/act/actTop5")
-    public ResponseEntity<List<ActVO>> getRecentActivities() {
-        List<ActVO> lastFiveAct = actService.findTop5ByOrderByActCrTimeDesc();
-        return ResponseEntity.ok(lastFiveAct);
-
-    }
 }

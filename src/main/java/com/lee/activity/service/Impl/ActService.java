@@ -60,9 +60,5 @@ public class ActService implements IActService {
         return actDao.findById(id).orElse(null);
     }
 
-    //取得最新五筆活動資料
-    @Override
-    public List<ActVO> findTop5ByOrderByActCrTimeDesc() {
-        return actDao.findTop5ByOrderByActCrTimeDesc();
-    }
+
 }
